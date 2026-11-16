@@ -1,0 +1,60 @@
+body {
+  background-color: #510000;
+  font-family: Arial, sans-serif;
+  color: #3b2f2f;
+}
+
+.kartu-profil {
+  width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f5e6d3;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.kartu-profil img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.kartu-profil h1 {
+  color: #510000;
+}
+
+.daftar-link {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.daftar-link a {
+  display: block;
+  padding: 10px;
+  background-color: #510000;
+  color: #f5e6d3;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.daftar-link a:hover {
+  background-color: #c9a227;
+  color: #222222;
+}
+
+.kartu-profil button {
+  padding: 10px 20px;
+  background-color: #c9a227;
+  color: #222222;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.kartu-profil button:hover {
+  background-color: #b08d1f;
+}
