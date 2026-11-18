@@ -2,24 +2,67 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profil Saya - Ray</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#4f0000">
+  <meta name="description" content="Pusat belajar materi IPA kelas XI: Fisika, Kimia, Matematika, dan Biologi.">
+  <title>Ruang Belajar XI | Materi IPA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home.css">
+  <script src="home.js" defer></script>
 </head>
 <body>
-  <div class="kartu-profil">
-    <img src="foto-profil.jpg" alt="Foto profil Ray">
-    <h1>Ray</h1>
-    <p>Testing</p>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">XI</span><span>Ruang Belajar</span></a>
+    <span class="topbar-label">KURIKULUM MERDEKA</span>
+  </header>
 
-    <div class="daftar-link">
-      <a href="https://www.tiktok.com/@ryyssza" target="_blank" rel="noopener">Kunjungi TikTok Saya</a>
-      <a href="https://www.instagram.com/rysssssssszz" target="_blank" rel="noopener">Kunjungi Instagram Saya</a>
-      <a href="https://open.spotify.com/user/31xo6qxxwknvn6fv5g5w5x6n556m" target="_blank" rel="noopener">Kunjungi Spotify Saya</a>
-    </div>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">LEARNING CENTER · KELAS XI</p>
+        <h1 id="sapaan">Selamat datang!</h1>
+        <p class="hero-description">Belajar jadi lebih terarah. Pilih mata pelajaran, pelajari materi, lalu uji pemahamanmu melalui latihan soal.</p>
+        <a class="primary-link" href="#mata-pelajaran">Mulai belajar <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="book-emoji">📚</div><span class="spark spark-one">✦</span><span class="spark spark-two">＋</span>
+      </div>
+    </section>
 
-    <button id="sapaButton">Melambai ke saya!</button>
-  </div>
-  <script src="script.js"></script>
+    <section class="welcome-row">
+      <div><p class="section-kicker">RUANG BELAJARMU</p><h2>Halo, semangat belajar!</h2><p id="tanggalHariIni" class="muted"></p></div>
+      <div class="quote-card"><span>“</span><p id="kalimatMotivasi">Sedikit demi sedikit, lama-lama menjadi paham.</p><button id="gantiMotivasi" class="text-button" type="button">Kata-kata lain ↗</button></div>
+    </section>
+
+    <section id="mata-pelajaran" class="subjects-section">
+      <div class="section-heading"><div><p class="section-kicker">PILIH MATA PELAJARAN</p><h2>Jelajahi Materi</h2></div><p class="muted">Empat bidang untuk memperluas wawasanmu.</p></div>
+      <div class="subject-grid">
+        <a class="subject-card physics" href="materi/fisika.html">
+          <span class="subject-icon">⚛️</span><span class="subject-tag">SAINS</span><h3>Fisika</h3><p>Pelajari gerak, gaya, fluida, gelombang, dan fenomena alam.</p><span class="card-bottom">Buka materi <b>↗</b></span>
+        </a>
+        <a class="subject-card chemistry" href="materi/kimia.html">
+          <span class="subject-icon">🧪</span><span class="subject-tag">SAINS</span><h3>Kimia</h3><p>Kenali atom, ikatan, reaksi, energi, dan kesetimbangan.</p><span class="card-bottom">Buka materi <b>↗</b></span>
+        </a>
+        <a class="subject-card math" href="#mata-pelajaran" onclick="return false" aria-label="Matematika, materi sedang disiapkan">
+          <span class="subject-icon">∑</span><span class="subject-tag">SAINS</span><h3>Matematika</h3><p>Asah kemampuan berpikir logis melalui konsep dan pemecahan masalah.</p><span class="card-bottom">Segera hadir <b>✦</b></span>
+        </a>
+        <a class="subject-card biology" href="#mata-pelajaran" onclick="return false" aria-label="Biologi, materi sedang disiapkan">
+          <span class="subject-icon">🌿</span><span class="subject-tag">SAINS</span><h3>Biologi</h3><p>Pelajari kehidupan, sistem tubuh, sel, dan lingkungan.</p><span class="card-bottom">Segera hadir <b>✦</b></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="progress-section">
+      <div class="section-heading"><div><p class="section-kicker">PERKEMBANGANMU</p><h2>Progres Belajar</h2></div><span class="progress-note">Tersimpan otomatis di perangkat ini</span></div>
+      <div class="progress-card">
+        <div class="progress-item"><div class="progress-icon">⚛️</div><div class="progress-info"><div class="progress-label"><strong>Fisika</strong><span><b id="jumlahFisika">0</b> bab selesai</span></div><div class="progress-track"><span id="barFisika"></span></div></div></div>
+        <div class="progress-item"><div class="progress-icon">🧪</div><div class="progress-info"><div class="progress-label"><strong>Kimia</strong><span><b id="jumlahKimia">0</b> bab selesai</span></div><div class="progress-track"><span id="barKimia"></span></div></div></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">© 2026 Ruang Belajar XI · Belajar dengan rasa ingin tahu.</footer>
 </body>
 </html>
