@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#241044">
+<meta name="description" content="Materi Matematika Kelas XI: ringkasan konsep, rumus, contoh, dan latihan soal.">
+<title>Matematika Kelas XI | Learning Center</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']], processEscapes: true },
+  chtml: { scale: 1.04 },
+  options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+<style>
+:root{
+  /* Palet Royal Purple / ungu neon. Struktur halaman dipertahankan seperti halaman Kimia. */
+  --bg:#10091f;
+  --bg2:#1b1033;
+  --panel:#241744;
+  --panel2:#321d5a;
+  --panel3:#48257b;
+  --green:#a855f7;
+  --green2:#d8b4fe;
+  --ink:#faf5ff;
+  --muted:#c4b5d9;
+  --line:rgba(196,154,255,.19);
+  --paper:#f7f1ff;
+  --paper-ink:#35234a;
+  --mint:#e9d5ff;
+  --shadow:0 18px 48px rgba(0,0,0,.28);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;min-height:100vh;color:var(--ink);
+  font:400 15px/1.7 "DM Sans",system-ui,sans-serif;
+  background:
+    radial-gradient(ellipse at 8% 0%,rgba(147,51,234,.25),transparent 36rem),
+    radial-gradient(ellipse at 100% 38%,rgba(109,40,217,.19),transparent 34rem),
+    var(--bg);
+}
+a{color:inherit}
+button,input{font:inherit}
+button{cursor:pointer}
+.container{width:min(1120px,100%);margin:auto;padding:24px 20px 60px}
+.back{
+  display:inline-flex;align-items:center;gap:9px;text-decoration:none;
+  color:var(--green2);font-weight:700;margin:0 0 20px;padding:9px 13px;
+  border:1px solid var(--line);border-radius:12px;background:rgba(36,23,68,.78);
+}
+.back:hover{background:var(--panel2);border-color:rgba(168,85,247,.55)}
+.hero{
+  position:relative;overflow:hidden;padding:clamp(25px,5vw,54px);
+  border:1px solid var(--line);border-radius:28px;
+  background:linear-gradient(135deg,#3b176b 0%,#1b1033 58%,#51218a 100%);
+  box-shadow:var(--shadow);
+}
+.hero:after{
+  content:"";position:absolute;width:300px;height:300px;border:1px solid rgba(192,132,252,.2);
+  border-radius:50%;right:-80px;top:-130px;
+  box-shadow:0 0 0 28px rgba(192,132,252,.045),0 0 0 58px rgba(192,132,252,.03);
+}
+.hero-top{display:flex;align-items:center;justify-content:space-between;gap:15px;position:relative;z-index:1}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.08em}
+.atom{
+  width:48px;height:48px;display:grid;place-items:center;border-radius:15px;
+  background:rgba(168,85,247,.18);color:var(--green2);font-size:27px;
+  border:1px solid rgba(216,180,254,.3)
+}
+.pill{
+  display:inline-flex;align-items:center;gap:7px;padding:6px 11px;border-radius:999px;
+  color:var(--green2);background:rgba(168,85,247,.14);border:1px solid rgba(216,180,254,.25);
+  font-size:.72rem;font-weight:800;letter-spacing:.07em
+}
+.hero-copy{max-width:720px;position:relative;z-index:1;padding-top:30px}
+.eyebrow{color:var(--green2);font-size:.78rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
+h1{font-size:clamp(2.1rem,5vw,3.8rem);line-height:1.12;letter-spacing:-.045em;margin:9px 0 15px}
+.hero-copy p{color:var(--muted);max-width:620px;margin:0;font-size:1.03rem}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px;position:relative;z-index:1}
+.stat{min-width:125px;padding:12px 15px;border:1px solid var(--line);border-radius:15px;background:rgba(16,9,31,.34)}
+.stat b{display:block;color:var(--green2);font-size:1.35rem}
+.stat span{font-size:.76rem;color:var(--muted)}
+.toolbar{display:grid;grid-template-columns:1fr auto;gap:12px;margin:25px 0 15px}
+.search-wrap{position:relative}
+.search-wrap span{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--green2);font-size:18px}
+.search{
+  width:100%;padding:14px 16px 14px 45px;border-radius:14px;outline:none;
+  border:1px solid var(--line);background:var(--panel);color:var(--ink)
+}
+.search:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(168,85,247,.14)}
+.action-btn{
+  border:1px solid var(--line);background:var(--panel2);color:var(--ink);
+  border-radius:14px;padding:0 16px;font-weight:700
+}
+.action-btn:hover{border-color:var(--green);color:var(--green2)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 23px}
+.filter{
+  border:1px solid var(--line);border-radius:999px;background:transparent;
+  color:var(--muted);padding:8px 13px;font-size:.82rem;font-weight:700
+}
+.filter.active,.filter:hover{background:rgba(168,85,247,.15);border-color:rgba(192,132,252,.55);color:var(--green2)}
+.progress{
+  padding:17px 19px;border:1px solid var(--line);border-radius:17px;
+  background:linear-gradient(120deg,rgba(50,29,90,.9),rgba(36,23,68,.9));margin-bottom:28px
+}
+.progress-head{display:flex;justify-content:space-between;gap:12px;font-weight:700}
+.progress-head small{color:var(--green2)}
+.track{height:9px;background:#160d2a;border-radius:99px;overflow:hidden;margin:11px 0 6px}
+.fill{height:100%;width:0;background:linear-gradient(90deg,#7e22ce,var(--green2));border-radius:99px;transition:width .35s}
+.progress-note{font-size:.76rem;color:var(--muted)}
+.section-heading{display:flex;align-items:end;justify-content:space-between;gap:15px;margin:32px 0 14px}
+.section-heading h2{font-size:1.35rem;margin:0;letter-spacing:-.02em}
+.section-heading p{color:var(--muted);font-size:.82rem;margin:3px 0 0}
+.count{font-size:.78rem;color:var(--green2);white-space:nowrap}
+.chapter-list{display:grid;gap:13px}
+.chapter{
+  overflow:hidden;border:1px solid var(--line);border-radius:18px;
+  background:linear-gradient(145deg,rgba(50,29,90,.95),rgba(29,17,53,.97));
+  box-shadow:0 8px 25px rgba(0,0,0,.13)
+}
+.chapter[hidden]{display:none}
+.chapter summary{
+  display:flex;align-items:center;gap:14px;padding:17px 19px;cursor:pointer;list-style:none
+}
+.chapter summary::-webkit-details-marker{display:none}
+.chapter summary:hover{background:rgba(168,85,247,.07)}
+.number{
+  width:44px;height:44px;flex:none;display:grid;place-items:center;border-radius:13px;
+  color:var(--green2);background:rgba(168,85,247,.17);font-weight:800
+}
+.chapter-title{flex:1;min-width:0}
+.chapter-title b{display:block;font-size:1rem}
+.chapter-title small{display:block;color:var(--muted);font-size:.79rem}
+.chapter-meta{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.tag{font-size:.66rem;font-weight:800;color:var(--green2);padding:4px 8px;border-radius:99px;background:rgba(168,85,247,.15)}
+.chevron{color:var(--green2);font-size:20px;transition:transform .2s}
+.chapter[open] .chevron{transform:rotate(180deg)}
+.content{padding:2px 20px 21px 77px;color:#eee5fa}
+.content h3{font-size:1rem;color:#fff;margin:21px 0 6px}
+.content p{margin:7px 0}
+.content ul{padding-left:20px}
+.content li{margin:4px 0}
+.note{
+  margin:14px 0;padding:12px 14px;border-left:3px solid var(--green);
+  border-radius:8px;background:rgba(168,85,247,.11);color:#eee1ff;font-size:.88rem
+}
+.formula-card{
+  position:relative;margin:13px 0;padding:14px 17px 12px;border-radius:12px;
+  color:var(--paper-ink);background:
+    repeating-linear-gradient(to bottom,transparent 0,transparent 30px,rgba(142,94,180,.13) 31px),
+    var(--paper);
+  border:1px solid rgba(229,210,248,.9);box-shadow:0 5px 13px rgba(0,0,0,.14)
+}
+.formula-label{
+  display:block;color:#806b91;font:700 .65rem "DM Sans",sans-serif;
+  letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px
+}
+.formula{
+  font:400 clamp(1.12rem,2.5vw,1.45rem)/1.65 "Kalam","Comic Sans MS",cursive;
+  color:#35234a;overflow-x:auto;padding:1px 0
+}
+.formula mjx-container{font-family:"Kalam",cursive!important;font-size:112%!important}
+.formula mjx-container[display="true"]{margin:.25em 0!important}
+.formula-explain{font-size:.8rem;color:#75647f;margin-top:4px}
+.complete{
+  display:flex;align-items:center;gap:10px;margin-top:18px;padding-top:14px;
+  border-top:1px solid var(--line);font-weight:700;font-size:.86rem;color:#eee1ff
+}
+.complete input{width:18px;height:18px;accent-color:var(--green)}
+.empty{display:none;text-align:center;padding:35px;color:var(--muted);border:1px dashed var(--line);border-radius:16px}
+.extra-intro{
+  padding:15px 17px;border:1px solid rgba(216,180,254,.22);border-radius:15px;
+  background:rgba(168,85,247,.08);color:#eee1ff;font-size:.88rem;margin-bottom:13px
+}
+.extra-intro b{color:var(--mint)}
+.footer{text-align:center;color:#a695bb;font-size:.78rem;margin-top:35px}
+.footer a{color:var(--green2)}
+@media(max-width:680px){
+  .container{padding:15px 13px 42px}
+  .hero{border-radius:21px;padding:23px 19px}
+  .hero-top{align-items:flex-start}
+  .hero-top .pill{font-size:.61rem}
+  .toolbar{grid-template-columns:1fr}
+  .action-btn{padding:11px}
+  .chapter summary{padding:14px 13px;gap:10px}
+  .number{width:38px;height:38px}
+  .chapter-meta{display:none}
+  .content{padding:0 14px 18px}
+  .section-heading{align-items:start}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+}
+.quiz-hint{margin:0 0 14px;padding:10px 13px;border-radius:11px;background:rgba(168,85,247,.11);border:1px solid rgba(192,132,252,.2);color:var(--muted);font-size:.82rem}
+.quiz{margin:22px 0 16px;padding:17px;border:1px solid rgba(192,132,252,.3);border-radius:15px;background:rgba(16,9,31,.42)}
+.quiz-heading{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.quiz-heading h3{margin:0;color:var(--green2);font-size:1.02rem}
+.quiz-heading span{font-size:.72rem;color:var(--muted)}
+.quiz-question{padding:13px 0;border-top:1px solid var(--line)}
+.quiz-question p{margin:0 0 9px;color:var(--ink);font-weight:700}
+.quiz-options{display:grid;gap:7px}
+.quiz-option{display:flex;gap:9px;padding:9px 11px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.025);cursor:pointer;color:#eee5fa;font-size:.88rem}
+.quiz-option input{margin-top:5px;accent-color:var(--green)}
+.quiz-check{margin-top:10px;border:0;border-radius:9px;padding:8px 13px;background:var(--green);color:#210d38;font-weight:800;font-size:.82rem}
+.quiz-check:disabled{opacity:.55;cursor:default}
+.quiz-feedback{margin-top:8px;font-size:.82rem;color:var(--green2)}
+.quiz-feedback.wrong{color:#ffd19a}
+.quiz-result{margin-top:13px;padding:12px;border-radius:10px;background:rgba(168,85,247,.13);color:var(--green2);font-weight:700}
+.quiz-reset{margin-top:9px;border:1px solid var(--line);border-radius:9px;padding:7px 11px;background:transparent;color:var(--ink);font-weight:700}
+</style>
+</head>
+
+<body>
+<main class="container">
+  <a class="back" href="../index.html">← Kembali ke Beranda</a>
+
+  <header class="hero">
+    <div class="hero-top">
+      <div class="brand"><span class="atom">∑</span><span>MATHEMATICS LEARNING CENTER</span></div>
+      <span class="pill">KURIKULUM MERDEKA</span>
+    </div>
+    <div class="hero-copy">
+      <div class="eyebrow">LOGIC • COUNT • CONQUER</div>
+      <h1>Matematika Kelas XI</h1>
+      <p>Rumus boleh bikin pusing, tapi jangan sampai menyerah, cuy! Pelajari konsep, pahami langkah penyelesaian, lalu uji kemampuanmu melalui latihan soal di setiap bab.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>XI</b><span>Tingkat kelas</span></div>
+      <div class="stat"><b>07</b><span>Topik materi utama</span></div>
+      <div class="stat"><b>+</b><span>Latihan dan pengayaan</span></div>
+    </div>
+  </header>
+
+  <section class="toolbar" aria-label="Pencarian materi">
+    <label class="search-wrap">
+      <span>⌕</span>
+      <input id="search" class="search" type="search" placeholder="Cari bab, konsep, atau rumus..." autocomplete="off">
+    </label>
+    <button class="action-btn" id="toggleAll" type="button">Buka semua bab</button>
+  </section>
+
+  <nav class="filters" aria-label="Filter materi">
+    <button class="filter active" data-filter="all" type="button">Semua materi</button>
+    <button class="filter" data-filter="utama" type="button">Materi utama</button>
+    <button class="filter" data-filter="pengayaan" type="button">Pengayaan</button>
+  </nav>
+
+  <section class="progress" aria-label="Progres belajar">
+    <div class="progress-head"><span>Progres belajar</span><small id="percent">0%</small></div>
+    <div class="track"><div class="fill" id="bar"></div></div>
+    <div class="progress-note" id="progressText">0 dari 7 bab utama selesai ditandai.</div>
+  </section>
+
+  <p class="quiz-hint">💡 Setelah mempelajari ringkasan setiap bab, kerjakan latihan pilihan ganda. Jika jawabanmu salah, pembahasan dan jawaban yang benar akan ditampilkan.</p>
+
+  <div class="section-heading">
+    <div><h2>Materi utama Matematika kelas XI</h2><p>Pelajari konsep dan rumus, kemudian lanjutkan ke latihan soal.</p></div>
+    <span class="count" id="mainCount">7 BAB</span>
+  </div>
+
+  <section class="chapter-list" id="mainChapters">
+    <details class="chapter" open data-kind="utama" data-search="komposisi fungsi invers domain kodomain range fungsi">
+      <summary>
+        <span class="number">01</span>
+        <span class="chapter-title"><b>Komposisi Fungsi dan Fungsi Invers</b><small>Operasi fungsi, komposisi, dan fungsi kebalikan</small></span>
+        <span class="chapter-meta"><span class="tag">Materi utama</span></span>
+        <span class="chevron">⌄</span>
+      </summary>
+      <div class="content">
+        <h3>A. Pengertian fungsi</h3>
+        <p>Fungsi adalah relasi yang memasangkan setiap anggota domain (daerah asal) dengan tepat satu anggota kodomain (daerah kawan). Hasil pemetaan disebut range (daerah hasil).</p>
+        <h3>B. Komposisi fungsi</h3>
+        <p>Komposisi fungsi menggabungkan dua fungsi atau lebih. Jika fungsi f dikerjakan terlebih dahulu lalu dilanjutkan fungsi g, komposisinya ditulis g ∘ f.</p>
+        <div class="formula-card"><span class="formula-label">Rumus komposisi</span><div class="formula">\[(g\circ f)(x)=g(f(x))\]</div><div class="formula-explain">Masukkan hasil f(x) ke dalam fungsi g(x). Urutan komposisi perlu diperhatikan.</div></div>
+        <h3>C. Fungsi invers</h3>
+        <p>Fungsi invers membalik proses pemetaan suatu fungsi. Fungsi memiliki invers sebagai fungsi jika pemetaannya satu-satu dan pada (bijektif), atau jika domain dan kodomain dibatasi sehingga syarat tersebut terpenuhi.</p>
+        <div class="formula-card"><span class="formula-label">Sifat fungsi invers</span><div class="formula">\[f^{-1}(f(x))=x\]</div><div class="formula-explain">Untuk mencari invers, tulis y = f(x), tukar x dan y, lalu nyatakan y dalam x.</div></div>
+        <div class="note">Contoh: jika f(x) = 2x + 3, maka y = 2x + 3. Setelah x dan y ditukar, x = 2y + 3 sehingga f⁻¹(x) = (x − 3)/2.</div>
+        <section class="quiz" data-quiz="mtk-fungsi"></section>
+        <label class="complete"><input class="done" type="checkbox" data-id="mtk-fungsi"> Tandai bab ini selesai</label>
+      </div>
+    </details>
+
+    <details class="chapter" data-kind="utama" data-search="trigonometri sinus cosinus tangen sudut identitas aturan sinus cosinus">
+      <summary>
+        <span class="number">02</span>
+        <span class="chapter-title"><b>Trigonometri</b><small>Perbandingan trigonometri, identitas, dan penerapan</small></span>
+        <span class="chapter-meta"><span class="tag">Materi utama</span></span>
+        <span class="chevron">⌄</span>
+      </summary>
+      <div class="content">
+        <h3>A. Perbandingan trigonometri</h3>
+        <p>Pada segitiga siku-siku, sinus, cosinus, dan tangen menyatakan perbandingan panjang sisi terhadap suatu sudut lancip θ.</p>
+        <div class="formula-card"><span class="formula-label">Perbandingan dasar</span><div class="formula">\[\sin\theta=\frac{\text{sisi depan}}{\text{hipotenusa}}\]</div><div class="formula">\[\cos\theta=\frac{\text{sisi samping}}{\text{hipotenusa}}\]</div><div class="formula">\[\tan\theta=\frac{\text{sisi depan}}{\text{sisi samping}}\]</div></div>
+        <h3>B. Sudut istimewa</h3>
+        <p>Sudut 0°, 30°, 45°, 60°, dan 90° sering digunakan karena nilai sinus, cosinus, dan tangennya dapat ditentukan secara tepat.</p>
+        <h3>C. Identitas trigonometri</h3>
+        <div class="formula-card"><span class="formula-label">Identitas dasar</span><div class="formula">\[\sin^2\theta+\cos^2\theta=1\]</div><div class="formula">\[\tan\theta=\frac{\sin\theta}{\cos\theta}\]</div></div>
+        <div class="note">Pastikan kalkulator berada pada mode derajat (DEG) jika sudut pada soal ditulis dalam derajat.</div>
+        <section class="quiz" data-quiz="mtk-trigonometri"></section>
+        <label class="complete"><input class="done" type="checkbox" data-id="mtk-trigonometri"> Tandai bab ini selesai</label>
+      </div>
+    </details>
+
+    <details class="chapter" data-kind="utama" data-search="lingkaran sudut pusat sudut keliling busur tali busur garis singgung">
+      <summary>
+        <span class="number">03</span>
+        <span class="chapter-title"><b>Lingkaran</b><small>Unsur lingkaran, sudut, busur, dan garis singgung</small></span>
+        <span class="chapter-meta"><span class="tag">Materi utama</span></span>
+        <span class="chevron">⌄</span>
+      </summary>
+      <div class="content">
+        <h3>A. Unsur-unsur lingkaran</h3>
+        <p>Lingkaran adalah kumpulan titik pada bidang yang memiliki jarak sama terhadap satu titik tetap yang disebut pusat. Jari-jari (r) menghubungkan pusat ke lingkaran, sedangkan diameter (d) melewati pusat dan menghubungkan dua titik pada lingkaran.</p>
+        <div class="formula-card"><span class="formula-label">Keliling dan luas</span><div class="formula">\[K=2\pi r=\pi d\]</div><div class="formula">\[L=\pi r^2\]</div></div>
+        <h3>B. Sudut pusat dan sudut keliling</h3>
+        <p>Sudut pusat memiliki titik sudut di pusat lingkaran. Sudut keliling memiliki titik sudut pada lingkaran. Jika keduanya menghadap busur yang sama, besar sudut pusat adalah dua kali sudut keliling.</p>
+        <div class="formula-card"><span class="formula-label">Hubungan sudut</span><div class="formula">\[\angle pusat=2\times\angle keliling\]</div></div>
+        <h3>C. Garis singgung</h3>
+        <p>Garis singgung menyentuh lingkaran tepat di satu titik. Jari-jari yang ditarik ke titik singgung tegak lurus terhadap garis singgung.</p>
+        <div class="note">Gunakan π = 22/7 jika jari-jari atau diameter merupakan kelipatan 7, atau gunakan 3,14 sesuai petunjuk soal.</div>
+        <section class="quiz" data-quiz="mtk-lingkaran"></section>
+        <label class="complete"><input class="done" type="checkbox" data-id="mtk-lingkaran"> Tandai bab ini selesai</label>
+      </div>
+    </details>
+
+    <details class="chapter" data-kind="utama" data-search="statistika mean median modus kuartil jangkauan simpangan baku data">
+      <summary>
+        <span class="number">04</span>
+        <span class="chapter-title"><b>Statistika</b><small>Ukuran pemusatan dan penyebaran data</small></span>
+        <span class="chapter-meta"><span class="tag">Materi utama</span></span>
+        <span class="chevron">⌄</span>
+      </summary>
+      <div class="content">
+        <h3>A. Mean (rata-rata)</h3>
+        <p>Mean diperoleh dengan menjumlahkan seluruh nilai data kemudian membaginya dengan banyak data.</p>
+        <div class="formula-card"><span class="formula-label">Rata-rata data tunggal</span><div class="formula">\[\bar{x}=\frac{\sum x_i}{n}\]</div></div>
+        <h3>B. Median dan modus</h3>
+        <p>Median adalah nilai tengah setelah data diurutkan. Jika banyak data ganjil, median berada tepat di tengah. Jika banyak data genap, median adalah rata-rata dua nilai tengah. Modus adalah nilai yang paling sering muncul.</p>
+        <h3>C. Jangkauan dan kuartil</h3>
+        <p>Jangkauan adalah selisih data terbesar dan terkecil. Kuartil membagi data terurut menjadi empat bagian, yaitu Q1, Q2 (median), dan Q3.</p>
+        <div class="formula-card"><span class="formula-label">Jangkauan</span><div class="formula">\[R=x_{\text{maks}}-x_{\text{min}}\]</div></div>
+        <div class="note">Selalu urutkan data sebelum menentukan median dan kuartil agar posisi nilainya tidak keliru.</div>
+        <section class="quiz" data-quiz="mtk-statistika"></section>
+        <label class="complete"><input class="done" type="checkbox" data-id="mtk-statistika"> Tandai bab ini selesai</label>
+      </div>
+    </details>
+
+    <details class="chapter" data-kind="utama" data-search="peluang kejadian ruang sampel titik sampel komplemen peluang gabungan">
+      <summary>
+        <span class="number">05</span>
+        <span class="chapter-title"><b>Peluang</b><small>Ruang sampel, kejadian, dan peluang suatu peristiwa</small></span>
+        <span class="chapter-meta"><span class="tag">Materi utama</span></span>
+        <span class="chevron">⌄</span>
+      </summary>
+      <div class="content">
+        <h3>A. Ruang sampel dan kejadian</h3>
+        <p>Ruang sampel adalah himpunan semua hasil yang mungkin dari suatu percobaan. Kejadian merupakan himpunan bagian dari ruang sampel.</p>
+        <h3>B. Peluang suatu kejadian</h3>
+        <p>Jika setiap hasil memiliki kemungkinan yang sama, peluang kejadian A adalah banyak hasil yang mendukung A dibagi banyak seluruh hasil dalam ruang sampel.</p>
+        <div class="formula-card"><span class="formula-label">Rumus peluang</span><div class="formula">\[P(A)=\frac{n(A)}{n(S)}\]</div></div>
+        <h3>C. Peluang komplemen</h3>
+        <p>Komplemen A adalah kejadian bahwa A tidak terjadi. Jumlah peluang suatu kejadian dan komplemennya sama dengan 1.</p>
+        <div class="formula-card"><span class="formula-label">Peluang komplemen</span><div class="formula">\[P(A^c)=1-P(A)\]</div></div>
+        <div class="note">Nilai peluang selalu berada di antara 0 dan 1. Peluang 0 berarti mustahil, sedangkan peluang 1 berarti pasti.</div>
+        <section class="quiz" data-quiz="mtk-peluang"></section>
+        <label class="complete"><input class="done" type="checkbox" data-id="mtk-peluang"> Tandai bab ini selesai</label>
+      </div>
+    </details>
+
+    <details class="chapter" data-kind="utama" data-search="barisan aritmetika geometri deret beda rasio suku ke n">
+      <summary>
+        <span class="number">06</span>
+        <span class="chapter-title"><b>Barisan dan Deret</b><small>Barisan aritmetika, geometri, dan jumlah suku</small></span>
+        <span class="chapter-meta"><span class="tag">Materi utama</span></span>
+        <span class="chevron">⌄</span>
+      </summary>
+      <div class="content">
+        <h3>A. Barisan aritmetika</h3>
+        <p>Barisan aritmetika memiliki selisih tetap antara dua suku berurutan. Selisih tetap tersebut disebut beda (b).</p>
+        <div class="formula-card"><span class="formula-label">Suku ke-n aritmetika</span><div class="formula">\[U_n=a+(n-1)b\]</div><div class="formula-explain">a adalah suku pertama dan b adalah beda.</div></div>
+        <h3>B. Deret aritmetika</h3>
+        <p>Deret adalah penjumlahan suku-suku dalam suatu barisan.</p>
+        <div class="formula-card"><span class="formula-label">Jumlah n suku aritmetika</span><div class="formula">\[S_n=\frac{n}{2}(2a+(n-1)b)\]</div></div>
+        <h3>C. Barisan geometri</h3>
+        <p>Barisan geometri memiliki rasio tetap, yaitu perbandingan suku dengan suku sebelumnya.</p>
+        <div class="formula-card"><span class="formula-label">Suku ke-n geometri</span><div class="formula">\[U_n=ar^{n-1}\]</div><span class="formula-label">Jumlah n suku (r ≠ 1)</span><div class="formula">\[S_n=a\frac{1-r^n}{1-r}\]</div></div>
+        <div class="note">Periksa apakah pola menggunakan selisih tetap (aritmetika) atau rasio tetap (geometri) sebelum memilih rumus.</div>
+        <section class="quiz" data-quiz="mtk-barisan"></section>
+        <label class="complete"><input class="done" type="checkbox" data-id="mtk-barisan"> Tandai bab ini selesai</label>
+      </div>
+    </details>
+
+    <details class="chapter" data-kind="utama" data-search="limit fungsi aljabar substitusi pemfaktoran bentuk tak tentu">
+      <summary>
+        <span class="number">07</span>
+        <span class="chapter-title"><b>Limit Fungsi</b><small>Konsep limit dan teknik penyelesaian dasar</small></span>
+        <span class="chapter-meta"><span class="tag">Materi utama</span></span>
+        <span class="chevron">⌄</span>
+      </summary>
+      <div class="content">
+        <h3>A. Pengertian limit</h3>
+        <p>Limit menggambarkan nilai yang didekati suatu fungsi ketika variabel mendekati nilai tertentu. Nilai limit tidak selalu sama dengan nilai fungsi tepat di titik tersebut.</p>
+        <div class="formula-card"><span class="formula-label">Notasi limit</span><div class="formula">\[\lim_{x\to a}f(x)=L\]</div><div class="formula-explain">Artinya, f(x) mendekati L ketika x mendekati a.</div></div>
+        <h3>B. Substitusi langsung</h3>
+        <p>Jika fungsi kontinu pada titik yang dituju, limit dapat dihitung dengan mengganti x langsung dengan nilai yang didekati.</p>
+        <div class="formula-card"><span class="formula-label">Contoh</span><div class="formula">\[\lim_{x\to2}(3x+1)=3(2)+1=7\]</div></div>
+        <h3>C. Pemfaktoran</h3>
+        <p>Jika substitusi menghasilkan bentuk tak tentu 0/0, sederhanakan bentuk aljabar, misalnya dengan memfaktorkan pembilang dan penyebut, lalu hitung kembali limitnya.</p>
+        <div class="note">Bentuk 0/0 bukan jawaban akhir. Bentuk tersebut menandakan bahwa fungsi perlu disederhanakan atau dianalisis lebih lanjut.</div>
+        <section class="quiz" data-quiz="mtk-limit"></section>
+        <label class="complete"><input class="done" type="checkbox" data-id="mtk-limit"> Tandai bab ini selesai</label>
+      </div>
+    </details>
+  </section>
+
+  <div class="section-heading">
+    <div><h2>Pengayaan dan konsep pendukung</h2><p>Topik tambahan untuk memperluas pemahaman Matematika.</p></div>
+    <span class="count">PENDALAMAN</span>
+  </div>
+  <div class="extra-intro"><b>Catatan:</b> Urutan dan cakupan materi Matematika kelas XI dapat berbeda antar sekolah. Cocokkan daftar ini dengan ATP, modul, buku, serta arahan guru di kelas.</div>
+
+  <section class="chapter-list" id="extraChapters">
+    <details class="chapter" data-kind="pengayaan" data-search="matriks ordo elemen penjumlahan perkalian determinan invers">
+      <summary><span class="number">+</span><span class="chapter-title"><b>Matriks</b><small>Ordo, operasi, determinan, dan invers matriks</small></span><span class="chapter-meta"><span class="tag">Pengayaan</span></span><span class="chevron">⌄</span></summary>
+      <div class="content">
+        <p>Matriks adalah susunan bilangan berbentuk baris dan kolom. Ordo matriks menyatakan banyak baris dikali banyak kolom. Penjumlahan dan pengurangan dilakukan pada elemen yang seletak dan mensyaratkan ordo yang sama.</p>
+        <div class="formula-card"><span class="formula-label">Determinan matriks 2 × 2</span><div class="formula">\[A=\begin{pmatrix}a&b\\c&d\end{pmatrix}\]</div><div class="formula">\[\det(A)=ad-bc\]</div></div>
+        <label class="complete"><input class="done" type="checkbox" data-id="mtk-matriks"> Tandai materi ini selesai</label>
+      </div>
+    </details>
+    <details class="chapter" data-kind="pengayaan" data-search="vektor besar arah komponen penjumlahan">
+      <summary><span class="number">+</span><span class="chapter-title"><b>Vektor</b><small>Besar, arah, komponen, dan operasi vektor</small></span><span class="chapter-meta"><span class="tag">Pengayaan</span></span><span class="chevron">⌄</span></summary>
+      <div class="content">
+        <p>Vektor adalah besaran yang memiliki besar dan arah. Dalam koordinat dua dimensi, vektor dapat dinyatakan menggunakan komponen horizontal dan vertikal.</p>
+        <div class="formula-card"><span class="formula-label">Panjang vektor dua dimensi</span><div class="formula">\[|\vec{v}|=\sqrt{x^2+y^2}\]</div></div>
+        <label class="complete"><input class="done" type="checkbox" data-id="mtk-vektor"> Tandai materi ini selesai</label>
+      </div>
+    </details>
+    <details class="chapter" data-kind="pengayaan" data-search="turunan fungsi diferensial gradien laju perubahan">
+      <summary><span class="number">+</span><span class="chapter-title"><b>Turunan Fungsi</b><small>Laju perubahan dan gradien garis singgung</small></span><span class="chapter-meta"><span class="tag">Pengayaan</span></span><span class="chevron">⌄</span></summary>
+      <div class="content">
+        <p>Turunan menyatakan laju perubahan sesaat suatu fungsi. Untuk fungsi pangkat sederhana, aturan pangkat dapat digunakan.</p>
+        <div class="formula-card"><span class="formula-label">Aturan pangkat</span><div class="formula">\[\frac{d}{dx}(x^n)=nx^{n-1}\]</div></div>
+        <label class="complete"><input class="done" type="checkbox" data-id="mtk-turunan"> Tandai materi ini selesai</label>
+      </div>
+    </details>
+  </section>
+
+  <div class="empty" id="empty">Materi tidak ditemukan. Coba kata kunci lain.</div>
+
+  <footer class="footer">
+    <p>∑ Terus berlatih, karena kemampuan tumbuh dari proses.</p>
+    <p>Materi ini merupakan ringkasan pendamping belajar. Sesuaikan urutan dan kedalaman pembahasan dengan pembelajaran di sekolah.</p>
+    <p><a href="https://kurikulum.kemdikbud.go.id/" target="_blank" rel="noopener">Referensi Kurikulum</a></p>
+  </footer>
+</main>
+
+<script>
+(() => {
+  const STORAGE_KEY = "materi-matematika-xi-v1";
+  const search = document.getElementById("search");
+  const filterButtons = [...document.querySelectorAll(".filter")];
+  const chapters = [...document.querySelectorAll(".chapter")];
+  const checks = [...document.querySelectorAll(".done")];
+  const toggleAll = document.getElementById("toggleAll");
+  let activeFilter = "all";
+
+  function readProgress() {
+    try {
+      const value = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+      return value && typeof value === "object" && !Array.isArray(value) ? value : {};
+    } catch (_) { return {}; }
+  }
+
+  function writeProgress(value) {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(value)); }
+    catch (_) { /* Halaman tetap dapat digunakan tanpa penyimpanan browser. */ }
+  }
+
+  function updateProgress() {
+    const data = readProgress();
+    let completed = 0;
+
+    checks.forEach(input => {
+      input.checked = data[input.dataset.id] === true;
+      if (input.checked) completed++;
+    });
+
+    const mainChecks = checks.filter(input =>
+      input.dataset.id.startsWith("mtk-") &&
+      !["mtk-matriks","mtk-vektor","mtk-turunan"].includes(input.dataset.id)
+    );
+
+    const mainDone = mainChecks.filter(input =>
+      data[input.dataset.id] === true
+    ).length;
+
+    const percent = mainChecks.length
+      ? Math.round(mainDone / mainChecks.length * 100)
+      : 0;
+
+    document.getElementById("bar").style.width = percent + "%";
+    document.getElementById("percent").textContent = percent + "%";
+    document.getElementById("progressText").textContent =
+      mainDone + " dari " + mainChecks.length +
+      " bab utama selesai ditandai. " +
+      completed + " materi selesai secara keseluruhan.";
+  }
+
+  function applyFilters() {
+    const term = search.value.trim().toLocaleLowerCase("id");
+    let visible = 0;
+
+    chapters.forEach(chapter => {
+      const matchesFilter =
+        activeFilter === "all" || chapter.dataset.kind === activeFilter;
+
+      const haystack =
+        (chapter.innerText + " " + (chapter.dataset.search || ""))
+        .toLocaleLowerCase("id");
+
+      const matchesSearch = !term || haystack.includes(term);
+      const show = matchesFilter && matchesSearch;
+
+      chapter.hidden = !show;
+      if (show) visible++;
+    });
+
+    document.getElementById("empty").style.display =
+      visible ? "none" : "block";
+
+    document.getElementById("mainCount").textContent =
+      document.querySelectorAll(
+        '#mainChapters .chapter:not([hidden])'
+      ).length + " BAB";
+  }
+
+  checks.forEach(input => input.addEventListener("change", () => {
+    const data = readProgress();
+    data[input.dataset.id] = input.checked;
+    writeProgress(data);
+    updateProgress();
+  }));
+
+  search.addEventListener("input", applyFilters);
+
+  filterButtons.forEach(button => button.addEventListener("click", () => {
+    activeFilter = button.dataset.filter;
+    filterButtons.forEach(item =>
+      item.classList.toggle("active", item === button)
+    );
+    applyFilters();
+  }));
+
+  toggleAll.addEventListener("click", () => {
+    const visibleChapters = chapters.filter(chapter => !chapter.hidden);
+    const shouldOpen = visibleChapters.some(chapter => !chapter.open);
+    visibleChapters.forEach(chapter => { chapter.open = shouldOpen; });
+    toggleAll.textContent = shouldOpen ? "Tutup semua bab" : "Buka semua bab";
+  });
+
+  const bankSoal = {
+    "mtk-fungsi": [
+      ["Jika f(x) = 2x + 3, maka f(4) adalah ...", ["7", "8", "11", "14"], 2, "Substitusikan x = 4: f(4) = 2(4) + 3 = 8 + 3 = 11."],
+      ["Jika f(x) = x + 2 dan g(x) = 3x, maka (g ∘ f)(2) adalah ...", ["6", "8", "10", "12"], 2, "Kerjakan f terlebih dahulu: f(2) = 4. Lalu g(4) = 3 × 4 = 12. Jadi jawaban yang benar adalah D, 12."],
+      ["Jika f(x) = 2x − 6, fungsi inversnya adalah ...", ["(x − 6)/2", "(x + 6)/2", "2x + 6", "2x − 6"], 1, "Misalkan y = 2x − 6. Tukar x dan y: x = 2y − 6, sehingga 2y = x + 6 dan y = (x + 6)/2."]
+    ],
+    "mtk-trigonometri": [
+      ["Nilai sin 30° adalah ...", ["0", "1/2", "√2/2", "1"], 1, "Sudut istimewa 30° memiliki nilai sinus 1/2."],
+      ["Jika sin θ = 3/5 dan θ sudut lancip, maka cos θ adalah ...", ["2/5", "3/5", "4/5", "5/4"], 2, "Gunakan sin²θ + cos²θ = 1. cos²θ = 1 − 9/25 = 16/25. Karena sudut lancip, cos θ = 4/5."],
+      ["Nilai tan 45° adalah ...", ["0", "1/2", "1", "√3"], 2, "Pada sudut 45°, sisi depan dan samping sama panjang, sehingga tan 45° = 1."]
+    ],
+    "mtk-lingkaran": [
+      ["Jika jari-jari lingkaran 7 cm dan π = 22/7, kelilingnya adalah ...", ["22 cm", "44 cm", "49 cm", "154 cm"], 1, "Keliling K = 2πr = 2 × 22/7 × 7 = 44 cm."],
+      ["Sudut keliling yang menghadap busur sama dengan sudut pusat 80° adalah ...", ["20°", "40°", "80°", "160°"], 1, "Sudut keliling besarnya setengah sudut pusat pada busur yang sama, yaitu 80° ÷ 2 = 40°."],
+      ["Luas lingkaran dengan jari-jari 3 cm adalah ...", ["3π cm²", "6π cm²", "9π cm²", "12π cm²"], 2, "Luas L = πr² = π × 3² = 9π cm²."]
+    ],
+    "mtk-statistika": [
+      ["Rata-rata dari data 2, 4, 6, 8 adalah ...", ["4", "5", "6", "7"], 1, "Jumlah data = 2 + 4 + 6 + 8 = 20. Banyak data 4, jadi mean = 20/4 = 5."],
+      ["Median dari data 3, 5, 7, 9, 11 adalah ...", ["5", "7", "8", "9"], 1, "Data sudah berurutan dan berjumlah lima. Nilai yang berada tepat di tengah adalah 7."],
+      ["Modus dari data 2, 3, 3, 4, 5 adalah ...", ["2", "3", "4", "5"], 1, "Modus adalah nilai yang paling sering muncul. Angka 3 muncul dua kali, paling banyak dibanding nilai lain."]
+    ],
+    "mtk-peluang": [
+      ["Sebuah dadu bersisi enam dilempar sekali. Peluang muncul angka 4 adalah ...", ["1/2", "1/3", "1/6", "2/3"], 2, "Ada satu hasil yang diinginkan, yaitu 4, dari enam hasil yang sama mungkin. Peluang = 1/6."],
+      ["Sebuah koin dilempar sekali. Peluang muncul sisi gambar adalah ...", ["0", "1/4", "1/2", "1"], 2, "Koin memiliki dua hasil yang sama mungkin: angka dan gambar. Peluang gambar = 1/2."],
+      ["Jika P(A) = 0,3, maka peluang komplemen A adalah ...", ["0,3", "0,5", "0,7", "1,3"], 2, "P(Aᶜ) = 1 − P(A) = 1 − 0,3 = 0,7."]
+    ],
+    "mtk-barisan": [
+      ["Barisan 3, 7, 11, 15, ... memiliki beda sebesar ...", ["2", "3", "4", "5"], 2, "Beda adalah selisih dua suku berurutan: 7 − 3 = 4."],
+      ["Suku ke-5 dari barisan aritmetika 2, 5, 8, 11, ... adalah ...", ["11", "12", "14", "15"], 2, "a = 2, b = 3, n = 5. U₅ = a + (n − 1)b = 2 + 4(3) = 14."],
+      ["Barisan geometri 2, 6, 18, 54, ... memiliki rasio ...", ["2", "3", "6", "9"], 1, "Rasio adalah perbandingan suku berurutan: 6/2 = 3. Nilai berikutnya juga dikalikan 3."]
+    ],
+    "mtk-limit": [
+      ["Nilai lim x→2 (x + 5) adalah ...", ["5", "6", "7", "8"], 2, "Gunakan substitusi langsung: 2 + 5 = 7."],
+      ["Nilai lim x→3 (2x² − 1) adalah ...", ["11", "15", "17", "19"], 2, "Substitusi x = 3: 2(3²) − 1 = 18 − 1 = 17."],
+      ["Bentuk 0/0 saat substitusi langsung pada limit menunjukkan bahwa ...", ["Limit pasti nol", "Limit pasti tidak ada", "Perlu penyederhanaan atau analisis lebih lanjut", "Jawabannya selalu satu"], 2, "Bentuk 0/0 disebut bentuk tak tentu. Coba sederhanakan, misalnya dengan pemfaktoran, sebelum menghitung limit."]
+    ]
+  };
+
+  // Membuat tampilan latihan setelah materi pada setiap bab.
+  function tampilkanLatihan() {
+    document.querySelectorAll("[data-quiz]").forEach(container => {
+      const soal = bankSoal[container.dataset.quiz];
+      if (!soal) return;
+      const id = container.dataset.quiz;
+
+      container.innerHTML = `
+        <div class="quiz-heading">
+          <h3>✦ Latihan Soal</h3>
+          <span>${soal.length} soal pilihan ganda</span>
+        </div>
+        ${soal.map((item, index) => `
+          <div class="quiz-question" data-question="${index}">
+            <p>${index + 1}. ${item[0]}</p>
+            <div class="quiz-options">
+              ${item[1].map((opsi, pilihan) => `
+                <label class="quiz-option">
+                  <input type="radio" name="${id}-q${index}" value="${pilihan}">
+                  <span>${String.fromCharCode(65 + pilihan)}. ${opsi}</span>
+                </label>
+              `).join("")}
+            </div>
+            <div class="quiz-feedback" aria-live="polite"></div>
+          </div>
+        `).join("")}
+        <button class="quiz-check" type="button" data-submit>Kirim Jawaban</button>
+        <div class="quiz-result" hidden aria-live="polite"></div>
+        <button class="quiz-reset" type="button" data-reset>Ulangi Latihan</button>
+      `;
+    });
+  }
+
+  document.addEventListener("click", event => {
+    const submitButton = event.target.closest("[data-submit]");
+    const resetButton = event.target.closest("[data-reset]");
+
+    if (submitButton) {
+      const container = submitButton.closest("[data-quiz]");
+      const soal = bankSoal[container.dataset.quiz];
+      const questions = [...container.querySelectorAll(".quiz-question")];
+      const result = container.querySelector(".quiz-result");
+
+      const belumDijawab = questions.some(question =>
+        !question.querySelector('input[type="radio"]:checked')
+      );
+
+      if (belumDijawab) {
+        result.hidden = false;
+        result.textContent = "Silakan jawab semua soal terlebih dahulu sebelum mengirim jawaban.";
+        return;
+      }
+
+      let benar = 0;
+      questions.forEach((question, index) => {
+        const item = soal[index];
+        const selected = question.querySelector('input[type="radio"]:checked');
+        const jawaban = Number(selected.value);
+        const jawabanBenar = item[2];
+        const feedback = question.querySelector(".quiz-feedback");
+
+        if (jawaban === jawabanBenar) {
+          benar++;
+          feedback.className = "quiz-feedback";
+          feedback.textContent = "✓ Benar! Pembahasan: " + item[3];
+        } else {
+          feedback.className = "quiz-feedback wrong";
+          feedback.textContent =
+            "✗ Belum tepat. Jawaban yang benar: " +
+            String.fromCharCode(65 + jawabanBenar) + ". " +
+            item[1][jawabanBenar] + ". Pembahasan: " + item[3];
+        }
+
+        question.querySelectorAll("input").forEach(input => { input.disabled = true; });
+      });
+
+      const nilai = Math.round((benar / questions.length) * 100);
+      result.hidden = false;
+      result.textContent =
+        "Latihan selesai! Nilai kamu: " + nilai + "/100 (" +
+        benar + " dari " + questions.length + " jawaban benar).";
+      submitButton.disabled = true;
+    }
+
+    if (resetButton) {
+      const container = resetButton.closest("[data-quiz]");
+      container.querySelectorAll(".quiz-question").forEach(question => {
+        question.querySelectorAll("input").forEach(input => {
+          input.checked = false;
+          input.disabled = false;
+        });
+        const feedback = question.querySelector(".quiz-feedback");
+        feedback.textContent = "";
+        feedback.className = "quiz-feedback";
+      });
+
+      container.querySelector("[data-submit]").disabled = false;
+      const result = container.querySelector(".quiz-result");
+      result.hidden = true;
+      result.textContent = "";
+    }
+  });
+
+  tampilkanLatihan();
+  updateProgress();
+  applyFilters();
+
+  document.addEventListener("toggle", event => {
+    if (
+      event.target.matches &&
+      event.target.matches(".chapter") &&
+      event.target.open &&
+      window.MathJax &&
+      window.MathJax.typesetPromise
+    ) {
+      window.MathJax.typesetPromise([event.target]).catch(() => {});
+    }
+  }, true);
+})();
+</script>
+</body>
+</html>
