@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10243a">
+<meta name="description" content="Materi Fisika Kelas XI Kurikulum Merdeka: ringkasan, konsep, rumus, dan contoh soal.">
+<title>Fisika Kelas XI | Physics Learning Center</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+
+<!-- MathJax menata akar, pecahan, pangkat, indeks, dan simbol secara matematis. -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']],
+    displayMath: [['\\[', '\\]']],
+    processEscapes: true
+  },
+  chtml: { scale: 1.04 },
+  options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+<style>
+:root{
+  --bg:#0b1929;
+  --bg2:#10243a;
+  --panel:#142d46;
+  --panel2:#193b59;
+  --panel3:#204966;
+  --cyan:#43bfe3;
+  --cyan2:#8cdef2;
+  --ink:#f4f8fb;
+  --muted:#b5c9d8;
+  --line:rgba(166,207,229,.16);
+  --paper:#f7f1df;
+  --paper-ink:#263b55;
+  --green:#7bd6b0;
+  --shadow:0 18px 48px rgba(0,0,0,.22);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;min-height:100vh;color:var(--ink);
+  font:400 15px/1.7 "DM Sans",system-ui,sans-serif;
+  background:
+    radial-gradient(ellipse at 8% 0%,rgba(40,105,145,.22),transparent 36rem),
+    radial-gradient(ellipse at 100% 38%,rgba(29,99,132,.16),transparent 34rem),
+    var(--bg);
+}
+a{color:inherit}
+button,input{font:inherit}
+button{cursor:pointer}
+.container{width:min(1120px,100%);margin:auto;padding:24px 20px 60px}
+.back{
+  display:inline-flex;align-items:center;gap:9px;text-decoration:none;
+  color:var(--cyan2);font-weight:700;margin:0 0 20px;padding:9px 13px;
+  border:1px solid var(--line);border-radius:12px;background:rgba(20,45,70,.72);
+}
+.back:hover{background:var(--panel2);border-color:rgba(67,191,227,.45)}
+.hero{
+  position:relative;overflow:hidden;padding:clamp(25px,5vw,54px);
+  border:1px solid var(--line);border-radius:28px;
+  background:linear-gradient(135deg,#142f4a 0%,#10243a 58%,#123a53 100%);
+  box-shadow:var(--shadow);
+}
+.hero:after{
+  content:"";position:absolute;width:300px;height:300px;border:1px solid rgba(67,191,227,.15);
+  border-radius:50%;right:-80px;top:-130px;box-shadow:0 0 0 28px rgba(67,191,227,.035),0 0 0 58px rgba(67,191,227,.025);
+}
+.hero-top{display:flex;align-items:center;justify-content:space-between;gap:15px;position:relative;z-index:1}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.08em}
+.atom{
+  width:48px;height:48px;display:grid;place-items:center;border-radius:15px;
+  background:rgba(67,191,227,.13);color:var(--cyan);font-size:27px;
+  border:1px solid rgba(67,191,227,.25)
+}
+.pill{
+  display:inline-flex;align-items:center;gap:7px;padding:6px 11px;border-radius:999px;
+  color:var(--cyan2);background:rgba(67,191,227,.1);border:1px solid rgba(67,191,227,.22);
+  font-size:.72rem;font-weight:800;letter-spacing:.07em
+}
+.hero-copy{max-width:720px;position:relative;z-index:1;padding-top:30px}
+.eyebrow{color:var(--cyan);font-size:.78rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
+h1{font-size:clamp(2.1rem,5vw,3.8rem);line-height:1.12;letter-spacing:-.045em;margin:9px 0 15px}
+.hero-copy p{color:var(--muted);max-width:620px;margin:0;font-size:1.03rem}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px;position:relative;z-index:1}
+.stat{min-width:125px;padding:12px 15px;border:1px solid var(--line);border-radius:15px;background:rgba(8,24,40,.28)}
+.stat b{display:block;color:var(--cyan);font-size:1.35rem}
+.stat span{font-size:.76rem;color:var(--muted)}
+.toolbar{display:grid;grid-template-columns:1fr auto;gap:12px;margin:25px 0 15px}
+.search-wrap{position:relative}
+.search-wrap span{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--cyan);font-size:18px}
+.search{
+  width:100%;padding:14px 16px 14px 45px;border-radius:14px;outline:none;
+  border:1px solid var(--line);background:var(--panel);color:var(--ink)
+}
+.search:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(67,191,227,.12)}
+.action-btn{
+  border:1px solid var(--line);background:var(--panel2);color:var(--ink);
+  border-radius:14px;padding:0 16px;font-weight:700
+}
+.action-btn:hover{border-color:var(--cyan);color:var(--cyan2)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 23px}
+.filter{
+  border:1px solid var(--line);border-radius:999px;background:transparent;
+  color:var(--muted);padding:8px 13px;font-size:.82rem;font-weight:700
+}
+.filter.active,.filter:hover{background:rgba(67,191,227,.12);border-color:rgba(67,191,227,.5);color:var(--cyan2)}
+.progress{
+  padding:17px 19px;border:1px solid var(--line);border-radius:17px;
+  background:linear-gradient(120deg,rgba(25,59,89,.85),rgba(20,45,70,.85));margin-bottom:28px
+}
+.progress-head{display:flex;justify-content:space-between;gap:12px;font-weight:700}
+.progress-head small{color:var(--cyan2)}
+.track{height:9px;background:#0b1c2c;border-radius:99px;overflow:hidden;margin:11px 0 6px}
+.fill{height:100%;width:0;background:linear-gradient(90deg,#2398c2,var(--cyan2));border-radius:99px;transition:width .35s}
+.progress-note{font-size:.76rem;color:var(--muted)}
+.section-heading{display:flex;align-items:end;justify-content:space-between;gap:15px;margin:32px 0 14px}
+.section-heading h2{font-size:1.35rem;margin:0;letter-spacing:-.02em}
+.section-heading p{color:var(--muted);font-size:.82rem;margin:3px 0 0}
+.count{font-size:.78rem;color:var(--cyan2);white-space:nowrap}
+.chapter-list{display:grid;gap:13px}
+.chapter{
+  overflow:hidden;border:1px solid var(--line);border-radius:18px;
+  background:linear-gradient(145deg,rgba(25,59,89,.94),rgba(18,43,66,.96));
+  box-shadow:0 8px 25px rgba(0,0,0,.10)
+}
+.chapter[hidden]{display:none}
+.chapter summary{
+  display:flex;align-items:center;gap:14px;padding:17px 19px;cursor:pointer;list-style:none
+}
+.chapter summary::-webkit-details-marker{display:none}
+.chapter summary:hover{background:rgba(67,191,227,.055)}
+.number{
+  width:44px;height:44px;flex:none;display:grid;place-items:center;border-radius:13px;
+  color:var(--cyan);background:rgba(67,191,227,.12);font-weight:800
+}
+.chapter-title{flex:1;min-width:0}
+.chapter-title b{display:block;font-size:1rem}
+.chapter-title small{display:block;color:var(--muted);font-size:.79rem}
+.chapter-meta{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.tag{font-size:.66rem;font-weight:800;color:var(--cyan2);padding:4px 8px;border-radius:99px;background:rgba(67,191,227,.1)}
+.chevron{color:var(--cyan);font-size:20px;transition:transform .2s}
+.chapter[open] .chevron{transform:rotate(180deg)}
+.content{padding:2px 20px 21px 77px;color:#dce8ef}
+.content h3{font-size:1rem;color:#fff;margin:21px 0 6px}
+.content p{margin:7px 0}
+.content ul{padding-left:20px}
+.content li{margin:4px 0}
+.definition{color:#dce8ef}
+.note{
+  margin:14px 0;padding:12px 14px;border-left:3px solid var(--cyan);
+  border-radius:8px;background:rgba(67,191,227,.08);color:#d9edf5;font-size:.88rem
+}
+.formula-card{
+  position:relative;margin:13px 0;padding:14px 17px 12px;border-radius:12px;
+  color:var(--paper-ink);background:
+    repeating-linear-gradient(to bottom,transparent 0,transparent 30px,rgba(86,143,177,.13) 31px),
+    var(--paper);
+  border:1px solid rgba(230,219,188,.9);box-shadow:0 5px 13px rgba(0,0,0,.12)
+}
+.formula-label{
+  display:block;color:#73849a;font:700 .65rem "DM Sans",sans-serif;
+  letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px
+}
+.formula{
+  font:400 clamp(1.12rem,2.5vw,1.45rem)/1.65 "Kalam","Comic Sans MS",cursive;
+  color:#203a59;overflow-x:auto;padding:1px 0
+}
+.formula mjx-container{font-family:"Kalam",cursive!important;font-size:112%!important}
+.formula mjx-container[display="true"]{margin:.25em 0!important}
+.formula-explain{font-size:.8rem;color:#596d82;margin-top:4px}
+.complete{
+  display:flex;align-items:center;gap:10px;margin-top:18px;padding-top:14px;
+  border-top:1px solid var(--line);font-weight:700;font-size:.86rem;color:#d9e8f0
+}
+.complete input{width:18px;height:18px;accent-color:var(--cyan)}
+.empty{display:none;text-align:center;padding:35px;color:var(--muted);border:1px dashed var(--line);border-radius:16px}
+.extra-intro{
+  padding:15px 17px;border:1px solid rgba(123,214,176,.2);border-radius:15px;
+  background:rgba(123,214,176,.06);color:#d9eee6;font-size:.88rem;margin-bottom:13px
+}
+.extra-intro b{color:var(--green)}
+.footer{text-align:center;color:#829bad;font-size:.78rem;margin-top:35px}
+.footer a{color:var(--cyan2)}
+@media(max-width:680px){
+  .container{padding:15px 13px 42px}
+  .hero{border-radius:21px;padding:23px 19px}
+  .hero-top{align-items:flex-start}
+  .hero-top .pill{font-size:.61rem}
+  .toolbar{grid-template-columns:1fr}
+  .action-btn{padding:11px}
+  .chapter summary{padding:14px 13px;gap:10px}
+  .number{width:38px;height:38px}
+  .chapter-meta{display:none}
+  .content{padding:0 14px 18px}
+  .section-heading{align-items:start}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+}
+
+/* Latihan soal pilihan ganda */
+.quiz{margin:22px 0 18px;padding:18px;border:1px solid rgba(67,191,227,.25);border-radius:16px;background:linear-gradient(145deg,rgba(8,25,42,.48),rgba(20,45,70,.55))}
+.quiz-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:15px}
+.quiz-head h3{margin:3px 0!important;color:#fff;font-size:1.08rem}
+.quiz-head p{margin:3px 0!important;color:var(--muted);font-size:.8rem}
+.quiz-kicker{font-size:.65rem;font-weight:800;letter-spacing:.13em;color:var(--cyan)}
+.quiz-total{flex:none;padding:5px 9px;border-radius:99px;background:rgba(67,191,227,.12);color:var(--cyan2);font-size:.68rem;font-weight:800}
+.quiz-question{min-width:0;margin:12px 0;padding:13px;border:1px solid var(--line);border-radius:12px}
+.quiz-question legend{padding:0 5px;color:#f4f8fb;font-weight:700;font-size:.88rem;line-height:1.55}
+.quiz-option{display:flex;align-items:flex-start;gap:9px;margin:8px 0;padding:8px 10px;border:1px solid rgba(166,207,229,.12);border-radius:9px;background:rgba(8,24,40,.24);color:#dce8ef;font-size:.84rem;cursor:pointer}
+.quiz-option:hover{border-color:rgba(67,191,227,.5);background:rgba(67,191,227,.07)}
+.quiz-option input{flex:none;margin:4px 0 0;accent-color:var(--cyan)}
+.quiz-question.is-correct{border-color:rgba(123,214,176,.65)}
+.quiz-question.is-wrong{border-color:rgba(255,145,145,.55)}
+.quiz-feedback{min-height:0;margin:7px 0 0!important;font-size:.78rem;color:var(--muted)}
+.quiz-feedback:empty{display:none}
+.quiz-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.quiz-actions button{border:1px solid transparent;border-radius:10px;padding:10px 14px;font-weight:800;font-size:.82rem}
+.quiz-check{background:var(--cyan);color:#092034}
+.quiz-check:hover{filter:brightness(1.08)}
+.quiz-reset{background:transparent;border-color:var(--line)!important;color:var(--cyan2)}
+.quiz-reset:hover{background:rgba(67,191,227,.09)}
+.quiz-result{margin:12px 0 0!important;padding:10px 12px;border-radius:10px;background:rgba(67,191,227,.08);color:var(--cyan2);font-weight:700;font-size:.85rem}
+@media(max-width:680px){.quiz{padding:13px}.quiz-head{gap:7px}.quiz-question{padding:10px}}
+
+</style>
+</head>
+
+<body>
+<main class="container">
+  <a class="back" href="../index.html">← Kembali ke Beranda</a>
+
+  <header class="hero">
+    <div class="hero-top">
+      <div class="brand"><span class="atom">⚛</span><span>PHYSICS LEARNING CENTER</span></div>
+      <span class="pill">KURIKULUM MERDEKA</span>
+    </div>
+    <div class="hero-copy">
+      <div class="eyebrow">SCIENCE • EXPLORE • UNDERSTAND</div>
+      <h1>Fisika Kelas XI</h1>
+      <p>Jelajahi konsep Fisika melalui ringkasan materi, catatan rumus, contoh soal, dan penerapannya dalam kehidupan sehari-hari. Pilih bab sesuai materi yang sedang kamu pelajari.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>XI</b><span>Tingkat kelas</span></div>
+      <div class="stat"><b>05</b><span>Bab buku siswa kelas XI</span></div>
+      <div class="stat"><b>+</b><span>Materi pengayaan Fase F</span></div>
+    </div>
+  </header>
+
+  <section class="toolbar" aria-label="Pencarian materi">
+    <label class="search-wrap">
+      <span>⌕</span>
+      <input id="search" class="search" type="search" placeholder="Cari bab, konsep, atau rumus..." autocomplete="off">
+    </label>
+    <button class="action-btn" id="toggleAll" type="button">Buka semua bab</button>
+  </section>
+
+  <nav class="filters" aria-label="Filter materi">
+    <button class="filter active" data-filter="all" type="button">Semua materi</button>
+    <button class="filter" data-filter="utama" type="button">Buku kelas XI</button>
+    <button class="filter" data-filter="pengayaan" type="button">Pengayaan Fase F</button>
+  </nav>
+
+  <section class="progress" aria-label="Progres belajar">
+    <div class="progress-head"><span>Progres belajar</span><small id="percent">0%</small></div>
+    <div class="track"><div class="fill" id="bar"></div></div>
+    <div class="progress-note" id="progressText">0 dari 5 bab utama selesai ditandai.</div>
+  </section>
+
+  <div class="section-heading">
+    <div><h2>Materi utama kelas XI</h2><p>Disusun mengikuti lima bab buku Fisika SMA/MA kelas XI (2022).</p></div>
+    <span class="count" id="mainCount">5 BAB</span>
+  </div>
+
+  <section class="chapter-list" id="mainChapters">
+
+    <details class="chapter" data-kind="utama" data-search="vektor besaran skalar resultan komponen pengukuran satuan">
+      <summary>
+        <span class="number">01</span>
+        <span class="chapter-title"><b>Vektor</b><small>Besaran, representasi, resultan, dan komponen vektor</small></span>
+        <span class="chapter-meta"><span class="tag">Buku kelas XI</span></span>
+        <span class="chevron">⌄</span>
+      </summary>
+      <div class="content">
+        <h3>A. Besaran skalar dan vektor</h3>
+        <p>Besaran skalar hanya memiliki nilai dan satuan, sedangkan besaran vektor memiliki nilai, satuan, serta arah. Contoh skalar adalah massa, waktu, dan suhu. Contoh vektor adalah perpindahan, kecepatan, percepatan, dan gaya.</p>
+        <h3>B. Representasi dan komponen vektor</h3>
+        <p>Vektor dapat digambarkan sebagai anak panah. Panjang panah menyatakan besar vektor, sedangkan arah panah menyatakan arahnya. Pada bidang dua dimensi, vektor dapat diuraikan menjadi komponen horizontal dan vertikal.</p>
+        <div class="formula-card"><span class="formula-label">Komponen vektor</span><div class="formula">\[A_x=A\cos\theta \qquad A_y=A\sin\theta\]</div><div class="formula-explain">θ diukur dari sumbu-x positif.</div></div>
+        <h3>C. Penjumlahan dan resultan vektor</h3>
+        <p>Resultan adalah satu vektor yang mewakili gabungan beberapa vektor. Penjumlahan dapat dilakukan dengan metode segitiga, poligon, jajargenjang, atau komponen.</p>
+        <div class="formula-card"><span class="formula-label">Dua vektor saling tegak lurus</span><div class="formula">\[R=\sqrt{A^2+B^2}\]</div><div class="formula-explain">Berlaku jika sudut antara A dan B adalah 90°.</div></div>
+        <div class="formula-card"><span class="formula-label">Besar resultan dari komponen</span><div class="formula">\[R=\sqrt{R_x^2+R_y^2}\]</div></div>
+        <h3>D. Contoh singkat</h3>
+        <p>Dua perpindahan saling tegak lurus, masing-masing 3 m ke timur dan 4 m ke utara. Besar resultannya:</p>
+        <div class="formula-card"><span class="formula-label">Penyelesaian</span><div class="formula">\[R=\sqrt{3^2+4^2}=\sqrt{25}=5\,\text{m}\]</div></div>
+        <div class="note">Ingat: jangan menjumlahkan besar vektor begitu saja jika arah keduanya berbeda. Perhatikan sudut dan tanda komponen.</div>
+<section class="quiz" data-quiz="xi-vektor" aria-label="Latihan soal xi-vektor">
+<div class="quiz-head"><div><span class="quiz-kicker">UJI PEMAHAMAN</span><h3>Latihan Soal Pilihan Ganda</h3><p>Pilih satu jawaban pada setiap soal, lalu periksa hasilnya.</p></div><span class="quiz-total">3 SOAL</span></div>
+<fieldset class="quiz-question" data-question="1">
+<legend><b>1.</b> Besaran yang memiliki besar dan arah disebut ....</legend>
+<label class="quiz-option"><input type="radio" name="q-xivektor-1" value="0"><span>A. Besaran skalar</span></label>
+<label class="quiz-option"><input type="radio" name="q-xivektor-1" value="1"><span>B. Besaran vektor</span></label>
+<label class="quiz-option"><input type="radio" name="q-xivektor-1" value="2"><span>C. Besaran pokok</span></label>
+<label class="quiz-option"><input type="radio" name="q-xivektor-1" value="3"><span>D. Besaran turunan</span></label>
+<p class="quiz-feedback" aria-live="polite" data-feedback="1"></p>
+</fieldset>
+<fieldset class="quiz-question" data-question="2">
+<legend><b>2.</b> Dua vektor masing-masing 3 m dan 4 m saling tegak lurus. Besar resultannya adalah ....</legend>
+<label class="quiz-option"><input type="radio" name="q-xivektor-2" value="0"><span>A. 1 m</span></label>
+<label class="quiz-option"><input type="radio" name="q-xivektor-2" value="1"><span>B. 5 m</span></label>
+<label class="quiz-option"><input type="radio" name="q-xivektor-2" value="2"><span>C. 7 m</span></label>
+<label class="quiz-option"><input type="radio" name="q-xivektor-2" value="3"><span>D. 12 m</span></label>
+<p class="quiz-feedback" aria-live="polite" data-feedback="2"></p>
+</fieldset>
+<fieldset class="quiz-question" data-question="3">
+<legend><b>3.</b> Jika vektor A membentuk sudut θ terhadap sumbu-x positif, komponen horizontalnya adalah ....</legend>
+<label class="quiz-option"><input type="radio" name="q-xivektor-3" value="0"><span>A. A sin θ</span></label>
+<label class="quiz-option"><input type="radio" name="q-xivektor-3" value="1"><span>B. A tan θ</span></label>
+<label class="quiz-option"><input type="radio" name="q-xivektor-3" value="2"><span>C. A cos θ</span></label>
+<label class="quiz-option"><input type="radio" name="q-xivektor-3" value="3"><span>D. A / cos θ</span></label>
+<p class="quiz-feedback" aria-live="polite" data-feedback="3"></p>
+</fieldset>
+<div class="quiz-actions"><button class="quiz-check" type="button">Periksa Jawaban</button><button class="quiz-reset" type="button">Ulangi Latihan</button></div><p class="quiz-result" aria-live="polite">Belum diperiksa.</p></section>
+
+        <label class="complete"><input class="done" type="checkbox" data-id="xi-vektor"> Tandai bab ini selesai</label>
+      </div>
+    </details>
+
+    <details class="chapter" data-kind="utama" data-search="kinematika gerak posisi jarak perpindahan kelajuan kecepatan percepatan glb glbb jatuh bebas parabola">
+      <summary>
+        <span class="number">02</span>
+        <span class="chapter-title"><b>Kinematika</b><small>Deskripsi gerak, GLB, GLBB, dan gerak dua dimensi</small></span>
+        <span class="chapter-meta"><span class="tag">Buku kelas XI</span></span>
+        <span class="chevron">⌄</span>
+      </summary>
+      <div class="content">
+        <h3>A. Posisi, jarak, dan perpindahan</h3>
+        <p>Posisi menyatakan letak benda terhadap titik acuan. Jarak adalah panjang seluruh lintasan dan termasuk besaran skalar. Perpindahan adalah perubahan posisi dari titik awal ke titik akhir dan termasuk besaran vektor.</p>
+        <h3>B. Kelajuan, kecepatan, dan percepatan</h3>
+        <p>Kelajuan rata-rata adalah jarak tempuh dibagi waktu. Kecepatan rata-rata adalah perpindahan dibagi waktu. Percepatan menyatakan perubahan kecepatan tiap satuan waktu.</p>
+        <div class="formula-card"><span class="formula-label">Kecepatan dan percepatan rata-rata</span><div class="formula">\[\bar v=\frac{\Delta x}{\Delta t}\qquad \bar a=\frac{\Delta v}{\Delta t}\]</div></div>
+        <h3>C. Gerak lurus beraturan (GLB)</h3>
+        <p>GLB adalah gerak pada lintasan lurus dengan kecepatan tetap sehingga percepatannya nol.</p>
+        <div class="formula-card"><span class="formula-label">Persamaan GLB</span><div class="formula">\[x=x_0+vt\]</div></div>
+        <h3>D. Gerak lurus berubah beraturan (GLBB)</h3>
+        <p>GLBB memiliki percepatan konstan. Tanda positif atau negatif bergantung pada arah sumbu yang dipilih.</p>
+        <div class="formula-card"><span class="formula-label">Persamaan GLBB</span><div class="formula">\[v=v_0+at\]</div><div class="formula">\[\Delta x=v_0t+\frac12at^2\]</div><div class="formula">\[v^2=v_0^2+2a\Delta x\]</div></div>
+        <h3>E. Gerak vertikal dan gerak parabola</h3>
+        <p>Gerak vertikal dipengaruhi percepatan gravitasi. Gerak parabola merupakan gabungan gerak horizontal dan vertikal yang dianalisis pada sumbu berbeda.</p>
+        <div class="formula-card"><span class="formula-label">Komponen kecepatan awal parabola</span><div class="formula">\[v_{0x}=v_0\cos\theta\qquad v_{0y}=v_0\sin\theta\]</div></div>
+        <div class="note">Gunakan satuan SI: posisi dalam meter (m), waktu dalam sekon (s), kecepatan dalam m/s, dan percepatan dalam m/s². Nilai g harus mengikuti ketelitian soal.</div>
+<section class="quiz" data-quiz="xi-kinematika" aria-label="Latihan soal xi-kinematika">
+<div class="quiz-head"><div><span class="quiz-kicker">UJI PEMAHAMAN</span><h3>Latihan Soal Pilihan Ganda</h3><p>Pilih satu jawaban pada setiap soal, lalu periksa hasilnya.</p></div><span class="quiz-total">3 SOAL</span></div>
+<fieldset class="quiz-question" data-question="1">
+<legend><b>1.</b> Gerak lurus beraturan (GLB) memiliki ciri ....</legend>
+<label class="quiz-option"><input type="radio" name="q-xikinematika-1" value="0"><span>A. Percepatan tetap dan tidak nol</span></label>
+<label class="quiz-option"><input type="radio" name="q-xikinematika-1" value="1"><span>B. Kecepatan tetap</span></label>
+<label class="quiz-option"><input type="radio" name="q-xikinematika-1" value="2"><span>C. Kecepatan selalu bertambah</span></label>
+<label class="quiz-option"><input type="radio" name="q-xikinematika-1" value="3"><span>D. Lintasan melingkar</span></label>
+<p class="quiz-feedback" aria-live="polite" data-feedback="1"></p>
+</fieldset>
+<fieldset class="quiz-question" data-question="2">
+<legend><b>2.</b> Sebuah benda berpindah 20 m dalam 4 s dengan arah tetap. Kecepatan rata-ratanya adalah ....</legend>
+<label class="quiz-option"><input type="radio" name="q-xikinematika-2" value="0"><span>A. 4 m/s</span></label>
+<label class="quiz-option"><input type="radio" name="q-xikinematika-2" value="1"><span>B. 5 m/s</span></label>
+<label class="quiz-option"><input type="radio" name="q-xikinematika-2" value="2"><span>C. 16 m/s</span></label>
+<label class="quiz-option"><input type="radio" name="q-xikinematika-2" value="3"><span>D. 80 m/s</span></label>
+<p class="quiz-feedback" aria-live="polite" data-feedback="2"></p>
+</fieldset>
+<fieldset class="quiz-question" data-question="3">
+<legend><b>3.</b> Satuan SI untuk percepatan adalah ....</legend>
+<label class="quiz-option"><input type="radio" name="q-xikinematika-3" value="0"><span>A. m/s</span></label>
+<label class="quiz-option"><input type="radio" name="q-xikinematika-3" value="1"><span>B. m²/s</span></label>
+<label class="quiz-option"><input type="radio" name="q-xikinematika-3" value="2"><span>C. m/s²</span></label>
+<label class="quiz-option"><input type="radio" name="q-xikinematika-3" value="3"><span>D. km/jam</span></label>
+<p class="quiz-feedback" aria-live="polite" data-feedback="3"></p>
+</fieldset>
+<div class="quiz-actions"><button class="quiz-check" type="button">Periksa Jawaban</button><button class="quiz-reset" type="button">Ulangi Latihan</button></div><p class="quiz-result" aria-live="polite">Belum diperiksa.</p></section>
+
+        <label class="complete"><input class="done" type="checkbox" data-id="xi-kinematika"> Tandai bab ini selesai</label>
+      </div>
+    </details>
+
+    <details class="chapter" data-kind="utama" data-search="dinamika gerak partikel hukum newton gaya berat normal gesek tegangan tali diagram benda bebas">
+      <summary>
+        <span class="number">03</span>
+        <span class="chapter-title"><b>Dinamika Gerak Partikel</b><small>Gaya, hukum Newton, dan penerapannya</small></span>
+        <span class="chapter-meta"><span class="tag">Buku kelas XI</span></span>
+        <span class="chevron">⌄</span>
+      </summary>
+      <div class="content">
+        <h3>A. Pengertian gaya</h3>
+        <p>Gaya adalah interaksi yang dapat mengubah keadaan gerak atau bentuk benda. Gaya merupakan besaran vektor dengan satuan newton (N).</p>
+        <h3>B. Hukum I Newton</h3>
+        <p>Jika resultan gaya pada benda sama dengan nol, benda mempertahankan keadaan diam atau bergerak lurus dengan kecepatan tetap.</p>
+        <div class="formula-card"><span class="formula-label">Hukum I Newton</span><div class="formula">\[\sum F=0\]</div></div>
+        <h3>C. Hukum II Newton</h3>
+        <p>Percepatan benda searah dengan resultan gaya, berbanding lurus dengan resultan gaya, dan berbanding terbalik dengan massa.</p>
+        <div class="formula-card"><span class="formula-label">Hukum II Newton</span><div class="formula">\[\sum F=ma\]</div></div>
+        <h3>D. Hukum III Newton</h3>
+        <p>Jika benda A memberikan gaya pada benda B, benda B memberikan gaya yang sama besar dan berlawanan arah pada benda A. Pasangan aksi-reaksi bekerja pada dua benda yang berbeda.</p>
+        <div class="formula-card"><span class="formula-label">Pasangan aksi–reaksi</span><div class="formula">\[\vec F_{AB}=-\vec F_{BA}\]</div></div>
+        <h3>E. Beberapa jenis gaya</h3>
+        <ul><li>Berat: gaya gravitasi pada benda dekat permukaan Bumi.</li><li>Normal: gaya kontak tegak lurus permukaan.</li><li>Gesek: gaya kontak yang melawan kecenderungan gerak relatif.</li><li>Tegangan tali: gaya sepanjang tali yang tegang.</li></ul>
+        <div class="formula-card"><span class="formula-label">Berat benda</span><div class="formula">\[w=mg\]</div><span class="formula-label">Model gesekan kinetik sederhana</span><div class="formula">\[f_k=\mu_k N\]</div></div>
+        <div class="note">Strategi mengerjakan soal dinamika: gambar diagram benda bebas, pilih sumbu, uraikan gaya ke komponen, lalu terapkan Hukum Newton pada setiap sumbu.</div>
+<section class="quiz" data-quiz="xi-dinamika" aria-label="Latihan soal xi-dinamika">
+<div class="quiz-head"><div><span class="quiz-kicker">UJI PEMAHAMAN</span><h3>Latihan Soal Pilihan Ganda</h3><p>Pilih satu jawaban pada setiap soal, lalu periksa hasilnya.</p></div><span class="quiz-total">3 SOAL</span></div>
+<fieldset class="quiz-question" data-question="1">
+<legend><b>1.</b> Hukum I Newton menyatakan bahwa benda akan mempertahankan keadaan geraknya jika ....</legend>
+<label class="quiz-option"><input type="radio" name="q-xidinamika-1" value="0"><span>A. Resultan gaya tidak nol</span></label>
+<label class="quiz-option"><input type="radio" name="q-xidinamika-1" value="1"><span>B. Resultan gaya sama dengan nol</span></label>
+<label class="quiz-option"><input type="radio" name="q-xidinamika-1" value="2"><span>C. Massanya berubah</span></label>
+<label class="quiz-option"><input type="radio" name="q-xidinamika-1" value="3"><span>D. Kelajuannya selalu bertambah</span></label>
+<p class="quiz-feedback" aria-live="polite" data-feedback="1"></p>
+</fieldset>
+<fieldset class="quiz-question" data-question="2">
+<legend><b>2.</b> Sebuah benda bermassa 2 kg mengalami percepatan 3 m/s². Resultan gaya pada benda adalah ....</legend>
+<label class="quiz-option"><input type="radio" name="q-xidinamika-2" value="0"><span>A. 1,5 N</span></label>
+<label class="quiz-option"><input type="radio" name="q-xidinamika-2" value="1"><span>B. 5 N</span></label>
+<label class="quiz-option"><input type="radio" name="q-xidinamika-2" value="2"><span>C. 6 N</span></label>
+<label class="quiz-option"><input type="radio" name="q-xidinamika-2" value="3"><span>D. 9 N</span></label>
+<p class="quiz-feedback" aria-live="polite" data-feedback="2"></p>
+</fieldset>
+<fieldset class="quiz-question" data-question="3">
+<legend><b>3.</b> Pasangan gaya aksi–reaksi menurut Hukum III Newton bekerja pada ....</legend>
+<label class="quiz-option"><input type="radio" name="q-xidinamika-3" value="0"><span>A. Benda yang sama</span></label>
+<label class="quiz-option"><input type="radio" name="q-xidinamika-3" value="1"><span>B. Dua benda yang berbeda</span></label>
+<label class="quiz-option"><input type="radio" name="q-xidinamika-3" value="2"><span>C. Arah yang sama</span></label>
+<label class="quiz-option"><input type="radio" name="q-xidinamika-3" value="3"><span>D. Benda yang selalu diam</span></label>
+<p class="quiz-feedback" aria-live="polite" data-feedback="3"></p>
+</fieldset>
+<div class="quiz-actions"><button class="quiz-check" type="button">Periksa Jawaban</button><button class="quiz-reset" type="button">Ulangi Latihan</button></div><p class="quiz-result" aria-live="polite">Belum diperiksa.</p></section>
+
+        <label class="complete"><input class="done" type="checkbox" data-id="xi-dinamika"> Tandai bab ini selesai</label>
+      </div>
+    </details>
+
+    <details class="chapter" data-kind="utama" data-search="fluida statis dinamis massa jenis tekanan hidrostatis pascal archimedes kontinuitas bernoulli">
+      <summary>
+        <span class="number">04</span>
+        <span class="chapter-title"><b>Fluida</b><small>Fluida statis, tekanan, dan fluida dinamis</small></span>
+        <span class="chapter-meta"><span class="tag">Buku kelas XI</span></span>
+        <span class="chevron">⌄</span>
+      </summary>
+      <div class="content">
+        <h3>A. Massa jenis dan tekanan</h3>
+        <p>Fluida adalah zat yang dapat mengalir, seperti zat cair dan gas. Massa jenis menyatakan massa per satuan volume, sedangkan tekanan adalah gaya tegak lurus per satuan luas.</p>
+        <div class="formula-card"><span class="formula-label">Massa jenis dan tekanan</span><div class="formula">\[\rho=\frac{m}{V}\qquad P=\frac{F}{A}\]</div></div>
+        <h3>B. Tekanan hidrostatis</h3>
+        <p>Tekanan dalam fluida diam bertambah seiring kedalaman. Untuk fluida dengan massa jenis seragam, tekanan hidrostatis bergantung pada massa jenis, gravitasi, dan kedalaman.</p>
+        <div class="formula-card"><span class="formula-label">Tekanan hidrostatis</span><div class="formula">\[P_h=\rho gh\]</div><div class="formula-explain">Tekanan total juga dapat mencakup tekanan pada permukaan fluida.</div></div>
+        <h3>C. Hukum Pascal</h3>
+        <p>Perubahan tekanan yang diberikan pada fluida tertutup diteruskan sama besar ke segala arah.</p>
+        <div class="formula-card"><span class="formula-label">Prinsip alat hidrolik ideal</span><div class="formula">\[\frac{F_1}{A_1}=\frac{F_2}{A_2}\]</div></div>
+        <h3>D. Hukum Archimedes</h3>
+        <p>Benda yang tercelup dalam fluida mengalami gaya ke atas sebesar berat fluida yang dipindahkan.</p>
+        <div class="formula-card"><span class="formula-label">Gaya apung</span><div class="formula">\[F_A=\rho_f gV_{tercelup}\]</div></div>
+        <h3>E. Fluida dinamis</h3>
+        <p>Fluida ideal dimodelkan tak termampatkan dan alirannya tunak tanpa gesekan dalam pembahasan dasar. Persamaan kontinuitas menyatakan laju aliran volume tetap pada pipa aliran.</p>
+        <div class="formula-card"><span class="formula-label">Kontinuitas</span><div class="formula">\[A_1v_1=A_2v_2\]</div><span class="formula-label">Persamaan Bernoulli</span><div class="formula">\[P+\frac12\rho v^2+\rho gh=konstan\]</div></div>
+        <div class="note">Perhatikan satuan: tekanan dalam pascal (Pa), massa jenis dalam kg/m³, dan volume dalam m³.</div>
+<section class="quiz" data-quiz="xi-fluida" aria-label="Latihan soal xi-fluida">
+<div class="quiz-head"><div><span class="quiz-kicker">UJI PEMAHAMAN</span><h3>Latihan Soal Pilihan Ganda</h3><p>Pilih satu jawaban pada setiap soal, lalu periksa hasilnya.</p></div><span class="quiz-total">3 SOAL</span></div>
+<fieldset class="quiz-question" data-question="1">
+<legend><b>1.</b> Besaran yang menyatakan massa per satuan volume adalah ....</legend>
+<label class="quiz-option"><input type="radio" name="q-xifluida-1" value="0"><span>A. Tekanan</span></label>
+<label class="quiz-option"><input type="radio" name="q-xifluida-1" value="1"><span>B. Massa jenis</span></label>
+<label class="quiz-option"><input type="radio" name="q-xifluida-1" value="2"><span>C. Gaya apung</span></label>
+<label class="quiz-option"><input type="radio" name="q-xifluida-1" value="3"><span>D. Debit</span></label>
+<p class="quiz-feedback" aria-live="polite" data-feedback="1"></p>
+</fieldset>
+<fieldset class="quiz-question" data-question="2">
+<legend><b>2.</b> Tekanan hidrostatis pada kedalaman tertentu dipengaruhi oleh ....</legend>
+<label class="quiz-option"><input type="radio" name="q-xifluida-2" value="0"><span>A. Warna dan bentuk wadah</span></label>
+<label class="quiz-option"><input type="radio" name="q-xifluida-2" value="1"><span>B. Massa jenis fluida, gravitasi, dan kedalaman</span></label>
+<label class="quiz-option"><input type="radio" name="q-xifluida-2" value="2"><span>C. Luas permukaan wadah saja</span></label>
+<label class="quiz-option"><input type="radio" name="q-xifluida-2" value="3"><span>D. Massa benda di luar fluida</span></label>
+<p class="quiz-feedback" aria-live="polite" data-feedback="2"></p>
+</fieldset>
+<fieldset class="quiz-question" data-question="3">
+<legend><b>3.</b> Menurut persamaan kontinuitas untuk fluida tak termampatkan, jika luas penampang pipa mengecil maka kelajuan aliran ....</legend>
+<label class="quiz-option"><input type="radio" name="q-xifluida-3" value="0"><span>A. Mengecil</span></label>
+<label class="quiz-option"><input type="radio" name="q-xifluida-3" value="1"><span>B. Tetap selalu nol</span></label>
+<label class="quiz-option"><input type="radio" name="q-xifluida-3" value="2"><span>C. Membesar</span></label>
+<label class="quiz-option"><input type="radio" name="q-xifluida-3" value="3"><span>D. Tidak dapat berubah</span></label>
+<p class="quiz-feedback" aria-live="polite" data-feedback="3"></p>
+</fieldset>
+<div class="quiz-actions"><button class="quiz-check" type="button">Periksa Jawaban</button><button class="quiz-reset" type="button">Ulangi Latihan</button></div><p class="quiz-result" aria-live="polite">Belum diperiksa.</p></section>
+
+        <label class="complete"><input class="done" type="checkbox" data-id="xi-fluida"> Tandai bab ini selesai</label>
+      </div>
+    </details>
+
+    <details class="chapter" data-kind="utama" data-search="gelombang bunyi cahaya getaran harmonis frekuensi periode panjang gelombang interferensi resonansi pemantulan pembiasan">
+      <summary>
+        <span class="number">05</span>
+        <span class="chapter-title"><b>Gelombang, Bunyi, dan Cahaya</b><small>Getaran, sifat gelombang, bunyi, dan optika</small></span>
+        <span class="chapter-meta"><span class="tag">Buku kelas XI</span></span>
+        <span class="chevron">⌄</span>
+      </summary>
+      <div class="content">
+        <h3>A. Getaran dan gelombang</h3>
+        <p>Getaran adalah gerak bolak-balik di sekitar titik keseimbangan. Gelombang adalah perambatan gangguan yang membawa energi tanpa memindahkan materi secara keseluruhan.</p>
+        <div class="formula-card"><span class="formula-label">Frekuensi dan periode</span><div class="formula">\[f=\frac{n}{t}\qquad T=\frac{1}{f}\]</div></div>
+        <h3>B. Besaran gelombang</h3>
+        <p>Panjang gelombang (λ) adalah jarak antara dua titik sefase yang berdekatan. Cepat rambat gelombang bergantung pada frekuensi dan panjang gelombangnya.</p>
+        <div class="formula-card"><span class="formula-label">Cepat rambat gelombang</span><div class="formula">\[v=\lambda f=\frac{\lambda}{T}\]</div></div>
+        <h3>C. Gelombang bunyi</h3>
+        <p>Bunyi merupakan gelombang mekanik yang memerlukan medium. Pembahasan bunyi mencakup frekuensi, intensitas, taraf intensitas, resonansi, dan efek Doppler.</p>
+        <div class="formula-card"><span class="formula-label">Taraf intensitas bunyi</span><div class="formula">\[\beta=10\log_{10}\left(\frac{I}{I_0}\right)\,\text{dB}\]</div></div>
+        <h3>D. Gelombang cahaya</h3>
+        <p>Cahaya adalah gelombang elektromagnetik. Gejala yang dipelajari antara lain pemantulan, pembiasan, interferensi, difraksi, dan polarisasi.</p>
+        <div class="formula-card"><span class="formula-label">Indeks bias</span><div class="formula">\[n=\frac{c}{v}\]</div><span class="formula-label">Hukum Snellius</span><div class="formula">\[n_1\sin\theta_1=n_2\sin\theta_2\]</div></div>
+        <div class="note">Bunyi tidak merambat di ruang hampa, sedangkan cahaya dapat merambat di ruang hampa.</div>
+<section class="quiz" data-quiz="xi-gelombang" aria-label="Latihan soal xi-gelombang">
+<div class="quiz-head"><div><span class="quiz-kicker">UJI PEMAHAMAN</span><h3>Latihan Soal Pilihan Ganda</h3><p>Pilih satu jawaban pada setiap soal, lalu periksa hasilnya.</p></div><span class="quiz-total">3 SOAL</span></div>
+<fieldset class="quiz-question" data-question="1">
+<legend><b>1.</b> Hubungan antara frekuensi (f) dan periode (T) adalah ....</legend>
+<label class="quiz-option"><input type="radio" name="q-xigelombang-1" value="0"><span>A. T = f</span></label>
+<label class="quiz-option"><input type="radio" name="q-xigelombang-1" value="1"><span>B. T = 1/f</span></label>
+<label class="quiz-option"><input type="radio" name="q-xigelombang-1" value="2"><span>C. T = f²</span></label>
+<label class="quiz-option"><input type="radio" name="q-xigelombang-1" value="3"><span>D. T = 2f</span></label>
+<p class="quiz-feedback" aria-live="polite" data-feedback="1"></p>
+</fieldset>
+<fieldset class="quiz-question" data-question="2">
+<legend><b>2.</b> Gelombang bunyi termasuk gelombang mekanik karena ....</legend>
+<label class="quiz-option"><input type="radio" name="q-xigelombang-2" value="0"><span>A. Dapat merambat di ruang hampa</span></label>
+<label class="quiz-option"><input type="radio" name="q-xigelombang-2" value="1"><span>B. Tidak membawa energi</span></label>
+<label class="quiz-option"><input type="radio" name="q-xigelombang-2" value="2"><span>C. Memerlukan medium untuk merambat</span></label>
+<label class="quiz-option"><input type="radio" name="q-xigelombang-2" value="3"><span>D. Selalu berupa gelombang transversal</span></label>
+<p class="quiz-feedback" aria-live="polite" data-feedback="2"></p>
+</fieldset>
+<fieldset class="quiz-question" data-question="3">
+<legend><b>3.</b> Jika panjang gelombang 2 m dan frekuensi 5 Hz, cepat rambat gelombang adalah ....</legend>
+<label class="quiz-option"><input type="radio" name="q-xigelombang-3" value="0"><span>A. 2,5 m/s</span></label>
+<label class="quiz-option"><input type="radio" name="q-xigelombang-3" value="1"><span>B. 7 m/s</span></label>
+<label class="quiz-option"><input type="radio" name="q-xigelombang-3" value="2"><span>C. 10 m/s</span></label>
+<label class="quiz-option"><input type="radio" name="q-xigelombang-3" value="3"><span>D. 15 m/s</span></label>
+<p class="quiz-feedback" aria-live="polite" data-feedback="3"></p>
+</fieldset>
+<div class="quiz-actions"><button class="quiz-check" type="button">Periksa Jawaban</button><button class="quiz-reset" type="button">Ulangi Latihan</button></div><p class="quiz-result" aria-live="polite">Belum diperiksa.</p></section>
+
+        <label class="complete"><input class="done" type="checkbox" data-id="xi-gelombang"> Tandai bab ini selesai</label>
+      </div>
+    </details>
+  </section>
+
+  <div class="section-heading">
+    <div><h2>Pengayaan materi Fase F</h2><p>Materi terkait capaian Fase F kelas XI–XII; urutan dan kedalaman belajar dapat berbeda antar sekolah.</p></div>
+    <span class="count">PENDALAMAN</span>
+  </div>
+  <div class="extra-intro"><b>Catatan kurikulum:</b> Fase F mencakup kelas XI dan XII. Bagian ini membantu memperluas wawasan, tetapi bukan pernyataan bahwa seluruh topik harus diajarkan di kelas XI atau pada semester yang sama.</div>
+
+  <section class="chapter-list" id="extraChapters">
+    <details class="chapter" data-kind="pengayaan" data-search="usaha energi kinetik potensial mekanik daya kekekalan energi">
+      <summary><span class="number">+</span><span class="chapter-title"><b>Usaha dan Energi</b><small>Usaha, energi kinetik, potensial, dan daya</small></span><span class="chapter-meta"><span class="tag">Pengayaan Fase F</span></span><span class="chevron">⌄</span></summary>
+      <div class="content">
+        <p>Usaha oleh gaya konstan adalah hasil kali komponen gaya searah perpindahan dengan perpindahan. Energi kinetik berkaitan dengan gerak, sedangkan energi potensial gravitasi berkaitan dengan posisi terhadap acuan.</p>
+        <div class="formula-card"><span class="formula-label">Usaha oleh gaya konstan</span><div class="formula">\[W=Fs\cos\theta\]</div><span class="formula-label">Energi kinetik dan potensial gravitasi</span><div class="formula">\[E_k=\frac12mv^2\qquad E_p=mgh\]</div><span class="formula-label">Daya rata-rata</span><div class="formula">\[P=\frac{W}{\Delta t}\]</div></div>
+        <label class="complete"><input class="done" type="checkbox" data-id="fasef-energi"> Tandai materi ini selesai</label>
+      </div>
+    </details>
+
+    <details class="chapter" data-kind="pengayaan" data-search="momentum impuls tumbukan kekekalan momentum">
+      <summary><span class="number">+</span><span class="chapter-title"><b>Momentum dan Impuls</b><small>Perubahan momentum dan tumbukan</small></span><span class="chapter-meta"><span class="tag">Pengayaan</span></span><span class="chevron">⌄</span></summary>
+      <div class="content">
+        <p>Momentum adalah hasil kali massa dan kecepatan. Impuls merupakan perubahan momentum akibat gaya yang bekerja selama selang waktu tertentu.</p>
+        <div class="formula-card"><span class="formula-label">Momentum dan impuls</span><div class="formula">\[\vec p=m\vec v\qquad \vec I=\vec F\,\Delta t=\Delta\vec p\]</div></div>
+        <label class="complete"><input class="done" type="checkbox" data-id="fasef-momentum"> Tandai materi ini selesai</label>
+      </div>
+    </details>
+
+    <details class="chapter" data-kind="pengayaan" data-search="suhu kalor perpindahan kalor konduksi konveksi radiasi">
+      <summary><span class="number">+</span><span class="chapter-title"><b>Suhu dan Kalor</b><small>Perubahan suhu dan perpindahan energi termal</small></span><span class="chapter-meta"><span class="tag">Pengayaan</span></span><span class="chevron">⌄</span></summary>
+      <div class="content">
+        <p>Kalor adalah energi yang berpindah karena perbedaan suhu. Perpindahan kalor dapat terjadi melalui konduksi, konveksi, dan radiasi.</p>
+        <div class="formula-card"><span class="formula-label">Kalor untuk perubahan suhu</span><div class="formula">\[Q=mc\Delta T\]</div><span class="formula-label">Kalor laten</span><div class="formula">\[Q=mL\]</div></div>
+        <label class="complete"><input class="done" type="checkbox" data-id="fasef-kalor"> Tandai materi ini selesai</label>
+      </div>
+    </details>
+
+    <details class="chapter" data-kind="pengayaan" data-search="termodinamika gas ideal hukum pertama mesin kalor">
+      <summary><span class="number">+</span><span class="chapter-title"><b>Termodinamika</b><small>Gas ideal, energi dalam, dan mesin kalor</small></span><span class="chapter-meta"><span class="tag">Pengayaan Fase F</span></span><span class="chevron">⌄</span></summary>
+      <div class="content">
+        <p>Termodinamika mempelajari hubungan kalor, usaha, suhu, dan energi dalam suatu sistem. Tanda usaha perlu mengikuti konvensi yang digunakan dalam soal.</p>
+        <div class="formula-card"><span class="formula-label">Persamaan gas ideal</span><div class="formula">\[PV=nRT\]</div><span class="formula-label">Hukum I Termodinamika (W oleh sistem)</span><div class="formula">\[\Delta U=Q-W\]</div></div>
+        <label class="complete"><input class="done" type="checkbox" data-id="fasef-termo"> Tandai materi ini selesai</label>
+      </div>
+    </details>
+
+    <details class="chapter" data-kind="pengayaan" data-search="listrik statis medan listrik potensial listrik kapasitor">
+      <summary><span class="number">+</span><span class="chapter-title"><b>Listrik Statis</b><small>Muatan, gaya Coulomb, medan, dan potensial listrik</small></span><span class="chapter-meta"><span class="tag">Pengayaan Fase F</span></span><span class="chevron">⌄</span></summary>
+      <div class="content">
+        <p>Listrik statis membahas muatan listrik yang relatif diam, interaksi antar muatan, medan listrik, dan energi potensial listrik.</p>
+        <div class="formula-card"><span class="formula-label">Hukum Coulomb</span><div class="formula">\[F=k\frac{|q_1q_2|}{r^2}\]</div><span class="formula-label">Medan listrik</span><div class="formula">\[E=\frac{F}{q}\]</div></div>
+        <label class="complete"><input class="done" type="checkbox" data-id="fasef-listrikstatis"> Tandai materi ini selesai</label>
+      </div>
+    </details>
+
+    <details class="chapter" data-kind="pengayaan" data-search="listrik dinamis arus tegangan hambatan hukum ohm rangkaian">
+      <summary><span class="number">+</span><span class="chapter-title"><b>Listrik Dinamis</b><small>Arus, tegangan, hambatan, dan rangkaian</small></span><span class="chapter-meta"><span class="tag">Pengayaan Fase F</span></span><span class="chevron">⌄</span></summary>
+      <div class="content">
+        <p>Listrik dinamis membahas aliran muatan dalam rangkaian. Hukum Ohm menghubungkan tegangan, arus, dan hambatan pada penghantar ohmik dalam kondisi tertentu.</p>
+        <div class="formula-card"><span class="formula-label">Arus listrik dan Hukum Ohm</span><div class="formula">\[I=\frac{\Delta Q}{\Delta t}\qquad V=IR\]</div><span class="formula-label">Daya listrik</span><div class="formula">\[P=VI=I^2R=\frac{V^2}{R}\]</div></div>
+        <label class="complete"><input class="done" type="checkbox" data-id="fasef-listrikdinamis"> Tandai materi ini selesai</label>
+      </div>
+    </details>
+
+    <details class="chapter" data-kind="pengayaan" data-search="magnet elektromagnetisme induksi faraday fluks magnet">
+      <summary><span class="number">+</span><span class="chapter-title"><b>Kemagnetan dan Elektromagnetisme</b><small>Medan magnet dan induksi elektromagnetik</small></span><span class="chapter-meta"><span class="tag">Pengayaan Fase F</span></span><span class="chevron">⌄</span></summary>
+      <div class="content">
+        <p>Elektromagnetisme mempelajari hubungan arus listrik dan medan magnet, serta timbulnya gaya gerak listrik induksi ketika fluks magnet berubah.</p>
+        <div class="formula-card"><span class="formula-label">Gaya magnet pada kawat berarus (besar)</span><div class="formula">\[F=BIL\sin\theta\]</div><span class="formula-label">Hukum Faraday (besar GGL induksi)</span><div class="formula">\[|\mathcal E|=N\left|\frac{\Delta\Phi_B}{\Delta t}\right|\]</div></div>
+        <label class="complete"><input class="done" type="checkbox" data-id="fasef-magnet"> Tandai materi ini selesai</label>
+      </div>
+    </details>
+
+    <details class="chapter" data-kind="pengayaan" data-search="gelombang elektromagnetik spektrum radio mikro inframerah ultraviolet">
+      <summary><span class="number">+</span><span class="chapter-title"><b>Gelombang Elektromagnetik</b><small>Spektrum dan pemanfaatan gelombang EM</small></span><span class="chapter-meta"><span class="tag">Pengayaan Fase F</span></span><span class="chevron">⌄</span></summary>
+      <div class="content">
+        <p>Gelombang elektromagnetik tersusun atas medan listrik dan medan magnet yang berosilasi. Gelombang ini tidak memerlukan medium dan di ruang hampa merambat dengan kelajuan cahaya.</p>
+        <div class="formula-card"><span class="formula-label">Hubungan gelombang</span><div class="formula">\[c=\lambda f\]</div></div>
+        <label class="complete"><input class="done" type="checkbox" data-id="fasef-gelombangem"> Tandai materi ini selesai</label>
+      </div>
+    </details>
+
+    <details class="chapter" data-kind="pengayaan" data-search="fisika modern relativitas kuantum inti radioaktivitas">
+      <summary><span class="number">+</span><span class="chapter-title"><b>Pengantar Fisika Modern</b><small>Relativitas, gejala kuantum, inti, dan radioaktivitas</small></span><span class="chapter-meta"><span class="tag">Pengayaan</span></span><span class="chevron">⌄</span></summary>
+      <div class="content">
+        <p>Fisika modern membahas fenomena yang tidak cukup dijelaskan oleh model klasik, termasuk relativitas khusus, gejala kuantum, struktur inti atom, dan radioaktivitas.</p>
+        <div class="formula-card"><span class="formula-label">Energi ekuivalen massa</span><div class="formula">\[E=mc^2\]</div><span class="formula-label">Energi foton</span><div class="formula">\[E=hf\]</div></div>
+        <label class="complete"><input class="done" type="checkbox" data-id="fasef-modern"> Tandai materi ini selesai</label>
+      </div>
+    </details>
+  </section>
+
+  <div class="empty" id="empty">Materi tidak ditemukan. Coba kata kunci lain.</div>
+
+  <footer class="footer">
+    <p>⚛️ Terus bertanya, mencoba, dan memahami.</p>
+    <p>Materi belajar disusun sebagai pendamping pembelajaran. Ikuti ATP dan arahan guru di sekolah masing-masing.</p>
+    <p><a href="https://kurikulum.kemdikbud.go.id/" target="_blank" rel="noopener">Referensi Kurikulum</a> · <a href="https://repositori.kemendikdasmen.go.id/33601/" target="_blank" rel="noopener">Panduan Fisika Fase F 2025</a></p>
+  </footer>
+</main>
+
+<script>
+(() => {
+  const STORAGE_KEY = "materi-fisika-xi-v2";
+  const HISTORY_KEY = "materi-fisika-xi-history-v1";
+  const search = document.getElementById("search");
+  const filterButtons = [...document.querySelectorAll(".filter")];
+  const chapters = [...document.querySelectorAll(".chapter")];
+  const checks = [...document.querySelectorAll(".done")];
+  const toggleAll = document.getElementById("toggleAll");
+  let activeFilter = "all";
+
+  function readProgress() {
+    try {
+      const value = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+      return value && typeof value === "object" && !Array.isArray(value) ? value : {};
+    } catch (_) { return {}; }
+  }
+  function writeProgress(value) {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(value)); }
+    catch (_) { /* Halaman tetap bisa dipakai jika penyimpanan browser diblokir. */ }
+  }
+  function readHistory() {
+    try {
+      const value = JSON.parse(localStorage.getItem(HISTORY_KEY) || "{}");
+      return value && typeof value === "object" && !Array.isArray(value) ? value : {};
+    } catch (_) { return {}; }
+  }
+  function writeHistory(value) {
+    try { localStorage.setItem(HISTORY_KEY, JSON.stringify(value)); }
+    catch (_) { /* Riwayat opsional; progres utama tetap tersimpan. */ }
+  }
+  function updateProgress() {
+    const data = readProgress();
+    let completed = 0;
+    checks.forEach(input => {
+      input.checked = data[input.dataset.id] === true;
+      if (input.checked) completed++;
+    });
+    const mainChecks = checks.filter(input => input.dataset.id.startsWith("xi-"));
+    const mainDone = mainChecks.filter(input => data[input.dataset.id] === true).length;
+    const percent = mainChecks.length ? Math.round(mainDone / mainChecks.length * 100) : 0;
+    document.getElementById("bar").style.width = percent + "%";
+    document.getElementById("percent").textContent = percent + "%";
+    document.getElementById("progressText").textContent =
+      mainDone + " dari " + mainChecks.length + " bab utama selesai ditandai. " +
+      completed + " materi selesai secara keseluruhan.";
+  }
+  function applyFilters() {
+    const term = search.value.trim().toLocaleLowerCase("id");
+    let visible = 0;
+    chapters.forEach(chapter => {
+      const matchesFilter = activeFilter === "all" || chapter.dataset.kind === activeFilter;
+      const haystack = (chapter.innerText + " " + (chapter.dataset.search || "")).toLocaleLowerCase("id");
+      const matchesSearch = !term || haystack.includes(term);
+      const show = matchesFilter && matchesSearch;
+      chapter.hidden = !show;
+      if (show) visible++;
+    });
+    document.getElementById("empty").style.display = visible ? "none" : "block";
+    document.getElementById("mainCount").textContent =
+      document.querySelectorAll('#mainChapters .chapter:not([hidden])').length + " BAB";
+  }
+  checks.forEach(input => input.addEventListener("change", () => {
+    const id = input.dataset.id;
+    const data = readProgress();
+    const history = readHistory();
+    data[id] = input.checked;
+
+    if (input.checked) {
+      history[id] = Date.now();
+    } else {
+      delete history[id];
+    }
+
+    writeProgress(data);
+    writeHistory(history);
+    updateProgress();
+  }));
+  search.addEventListener("input", applyFilters);
+  filterButtons.forEach(button => button.addEventListener("click", () => {
+    activeFilter = button.dataset.filter;
+    filterButtons.forEach(item => item.classList.toggle("active", item === button));
+    applyFilters();
+  }));
+  toggleAll.addEventListener("click", () => {
+    const visibleChapters = chapters.filter(chapter => !chapter.hidden);
+    const shouldOpen = visibleChapters.some(chapter => !chapter.open);
+    visibleChapters.forEach(chapter => chapter.open = shouldOpen);
+    toggleAll.textContent = shouldOpen ? "Tutup semua bab" : "Buka semua bab";
+  });
+  updateProgress();
+  applyFilters();
+
+
+  // Pemeriksaan latihan pilihan ganda per bab utama.
+  const quizAnswers = {
+    "xi-vektor": [
+      { answer: 1, explanation: "Besaran vektor memiliki besar, satuan, dan arah." },
+      { answer: 1, explanation: "R = √(3² + 4²) = 5 m." },
+      { answer: 2, explanation: "Komponen horizontal adalah Ax = A cos θ." }
+    ],
+    "xi-kinematika": [
+      { answer: 1, explanation: "GLB memiliki kecepatan tetap dan percepatan nol." },
+      { answer: 1, explanation: "Kecepatan rata-rata = 20 m / 4 s = 5 m/s." },
+      { answer: 2, explanation: "Satuan percepatan adalah m/s²." }
+    ],
+    "xi-dinamika": [
+      { answer: 1, explanation: "Hukum I Newton berlaku ketika resultan gaya sama dengan nol." },
+      { answer: 2, explanation: "ΣF = ma = 2 kg × 3 m/s² = 6 N." },
+      { answer: 1, explanation: "Gaya aksi dan reaksi bekerja pada dua benda berbeda." }
+    ],
+    "xi-fluida": [
+      { answer: 1, explanation: "Massa jenis dirumuskan ρ = m/V." },
+      { answer: 1, explanation: "Tekanan hidrostatis mengikuti Ph = ρgh." },
+      { answer: 2, explanation: "Jika luas penampang mengecil, kelajuan aliran membesar." }
+    ],
+    "xi-gelombang": [
+      { answer: 1, explanation: "Periode adalah kebalikan frekuensi: T = 1/f." },
+      { answer: 2, explanation: "Bunyi memerlukan medium untuk merambat." },
+      { answer: 2, explanation: "v = λf = 2 m × 5 Hz = 10 m/s." }
+    ]
+  };
+
+  document.querySelectorAll(".quiz").forEach(quiz => {
+    const chapterId = quiz.dataset.quiz;
+    const questions = quizAnswers[chapterId];
+    const checkButton = quiz.querySelector(".quiz-check");
+    const resetButton = quiz.querySelector(".quiz-reset");
+    const result = quiz.querySelector(".quiz-result");
+
+    checkButton.addEventListener("click", () => {
+      let score = 0;
+      let answered = 0;
+
+      quiz.querySelectorAll(".quiz-question").forEach((question, index) => {
+        const selected = question.querySelector('input[type="radio"]:checked');
+        const feedback = question.querySelector(".quiz-feedback");
+        const correctAnswer = questions[index];
+
+        question.classList.remove("is-correct", "is-wrong");
+
+        if (!selected) {
+          feedback.textContent = "Belum dijawab. Silakan pilih salah satu opsi.";
+          return;
+        }
+
+        answered++;
+        const isCorrect = Number(selected.value) === correctAnswer.answer;
+
+        if (isCorrect) {
+          score++;
+          question.classList.add("is-correct");
+          feedback.textContent = "✓ Benar! " + correctAnswer.explanation;
+        } else {
+          question.classList.add("is-wrong");
+          const correctLabel = String.fromCharCode(65 + correctAnswer.answer);
+          feedback.textContent = "Belum tepat. Jawaban yang benar: " + correctLabel + ". " + correctAnswer.explanation;
+        }
+      });
+
+      if (answered < questions.length) {
+        result.textContent = "Kamu baru menjawab " + answered + " dari " + questions.length + " soal. Lengkapi semua soal untuk mendapatkan nilai akhir.";
+      } else {
+        result.textContent = "Nilai kamu: " + score + " dari " + questions.length + " (" + Math.round(score / questions.length * 100) + "/100). " +
+          (score === questions.length ? "Sempurna! Pertahankan pemahamanmu." : "Pelajari pembahasan, lalu coba lagi.");
+      }
+    });
+
+    resetButton.addEventListener("click", () => {
+      quiz.querySelectorAll('input[type="radio"]').forEach(input => input.checked = false);
+      quiz.querySelectorAll(".quiz-question").forEach(question => {
+        question.classList.remove("is-correct", "is-wrong");
+        question.querySelector(".quiz-feedback").textContent = "";
+      });
+      result.textContent = "Belum diperiksa.";
+    });
+  });
+
+
+  // Jika MathJax selesai dimuat setelah konten terbuka, rumus tetap dirender.
+  document.addEventListener("toggle", event => {
+    if (event.target.matches && event.target.matches(".chapter") && event.target.open &&
+        window.MathJax && window.MathJax.typesetPromise) {
+      window.MathJax.typesetPromise([event.target]).catch(() => {});
+    }
+  }, true);
+})();
+</script>
+</body>
+</html>
